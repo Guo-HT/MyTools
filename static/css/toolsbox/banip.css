@@ -1,0 +1,18 @@
+.ip, .time, .loc{
+display:inline-block;
+}
+.ip{
+width:150px;
+margin-right:20px;
+margin-left:10px;
+}
+
+.time{
+width:200px;
+margin-right:20px;
+
+}
+
+li:hover{
+background-color:rgb(238,238,238);
+}

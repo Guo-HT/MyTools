@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <base href="/">
+    {#    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">#}
+    <script src="/static/js/toolsbox/app_root.js"></script>
+    <link rel="icon" href="/static/img/tools-icon.png">
+    <script src="/static/js/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block page_sidebar %}
+{% endblock %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/login_mobile.js"></script>
+<script src="/static/js/toolsbox/login_win_center.js"></script>
+<link rel="stylesheet" href="/static/css/toolsbox/login.css">
+
+{% endblock static_link %}
+
+{% block main_content %}
+    <div class="login_main">
+        <h3 class="title">用户登录：</h3><br>
+        <hr>
+        <br>
+        <form action="">
+            {% csrf_token %}
+            <label for="login_name">用户名/邮箱：</label><input type="text" id="login_name" /><span id="name_tip"></span>
+            <br>
+            <label for="login_password">密码：</label><input type="password" id="login_password"/><span
+                id="password_tip"></span>
+            <br>
+            <input type="checkbox" id="remember_me"><label for="remember_me">&nbsp;&nbsp;记住我</label>
+            <a href="/tools/forget_pwd" class="forget_pwd">忘记/修改密码？</a>
+            <br>
+            <div class="left_space"></div>
+            <input type="button" id="login_btn" class="login_btn" value="登录">
+            <div class="space_btn"></div>
+            <input type="reset" id="login_reset_btn" class="login_reset_btn" value="重置">
+        </form>
+    </div>
+{% endblock main_content %}
+
+</body>
+</html>

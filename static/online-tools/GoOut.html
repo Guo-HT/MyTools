@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title></title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="/static/js/app_root.js"></script>
+		<link href="https://cdn.bootcdn.net/ajax/libs/mui/3.7.1/css/mui.min.css" rel="stylesheet">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/mui/3.7.1/js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			$(function() {
+				$("#return-index").click(function() {
+					//location.href = "notes.html";
+				});
+
+				$("#img_head").click(function() {
+					//var galerry_pick = plus.gallery.pick(function(path) {
+					//	document.getElementById("img_head").src = path;
+					//});
+				})
+				var timer = setInterval(function() {
+					var time = parseInt($("#timer").text());
+					time = time - 1;
+					if (time < 100) {
+						time = "&nbsp;&nbsp;" + time;
+					}
+					if (time < 10) {
+						time = "&nbsp;&nbsp;&nbsp;&nbsp;" + time;
+					}
+					$("#timer").html(time);
+					if (time == 0) {
+						clearInterval(timer)
+					}
+				}, 1000);
+			})
+		</script>
+		<style>
+			body{
+				background-color: rgb(225,236,250);
+			}
+			
+			.div_head{
+				/* position:fixed; */
+				top:0;
+				left:0;
+			}
+			
+			.notes-head {
+				width: 100%;
+				height: 50px;
+				background-color: rgb(55, 116, 196);
+				color: white;
+				position: relative;
+			}
+			
+			.return-index {
+				height: 24px;
+				width: 24px;
+				margin: 13px;
+			}
+			
+			
+			.more-icon {
+				float: right;
+				height: 24px;
+				width: 24px;
+				margin: 13px;
+			}
+			
+			.mui-content{
+				padding:20px;
+				background-color: rgb(225,236,250);
+			}
+			.topcard{
+				background-color: rgb(33,177,183);
+				height:180px;
+				border-radius: 8px;
+				
+			}
+			
+			.topcard .info_left{
+				float:left;
+				margin:3% 2%;	
+			}
+			
+			.topcard .info_left div{
+				margin:8px;
+				margin-right:0;
+			}
+			
+			.big_font{
+				font-size:18px;
+				font-weight: bolder;
+			}
+			
+			.small_font , .small_font *{
+				font-size:14px;
+				font-weight: 300;
+			}
+			
+			.class-right{
+				float:right;
+				margin:10px 10px 10px 0;
+				width:35%;
+				max-height: 160px;
+				overflow: hidden;
+			}
+			
+			.img_head{
+				display: inline-block;
+				width:100%;
+			}
+			
+			
+			
+			.qrcode_div{
+				width:96%;
+				margin: 0 2%;
+				background-color: rgb(255,255,255);
+				padding: 5px 0;
+				box-shadow: inset 0px 16px 15px -11px #a5d1cf;
+				position:relative;
+			}
+			
+			.qrcode_img{
+				display: block;
+				width:80%;
+				margin:20px auto;
+			}
+			
+			.tip{
+				margin-top:10px;
+				color:rgb(157,160,158);
+				font-size:10px;
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			.timer{
+				font-weight: 900;
+				font-size: 80px;
+				position:absolute;
+				top:calc(50% - 10px);
+				left:calc(50% - 100px);
+				color: #fe3434;
+				-webkit-text-stroke: #fff003 2px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="div_head">
+			<div class="notes-head mui-clearfix">
+				<span class="mui-icon mui-icon-closeempty return-index" id="return-index"></span>
+				<span class="title">学生外出请假</span>
+				<span class="mui-icon mui-icon-more more-icon"></span>
+				<div>
+				</div>
+
+				<div class="mui-content mui-clearfix">
+					<div class="topcard">
+						<div class="info_left">
+							<div class="name big_font" contenteditable="true">关虎屯</div>
+							<div class="num small_font">学号：<span contenteditable="true">2016028020001</span></div>
+							<div class="course small_font">班级：<span contenteditable="true">软件工程201602</span></div>
+							<div class="start small_font">开始：<span contenteditable="true" id="start_time">2021-07-01
+									00:00</span></div>
+							<div class="end small_font">结束：<span contenteditable="true" id="end_time">2021-07-01
+									23:59</span></div>
+						</div>
+						<div class="class-right">
+							<label for="for">
+								<img src="/static/img/wechat-head.png" alt="" class="img_head" id="img_head">
+							</label>
+							<input type="file" name="image" id="file" onchange="loadFile(event)" accept="image/*" style="display:none;"  />
+						</div>
+					<script>
+						var loadFile = function(event){
+							var image = document.getElementById("img_head");
+							image.src=URL.createObjectURL(event.target.files[0]);
+						}
+					</script>
+					</div>
+
+					<div class="qrcode_div">
+						<img class="qrcode_img" src="https://ae01.alicdn.com/kf/U3c8bee9c59884da48cd2770c714641e0Y.jpg"	alt="">
+						<div class="timer"><span id="timer">180</span>S</div>
+					</div>
+					<div class="tip">请尽快向保安人员出示当前页面，倒计时结束后页面将失效</div>
+				</div>
+
+	</body>
+
+</html>

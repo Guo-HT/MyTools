@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(244, 246, 249);
+}
+
+.main {
+    /* height: 300px; */
+    width: 450px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    margin: calc(50vh - 250px) auto;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 42px 40px;
+    border-radius: 3px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.main h2 {
+    text-align: center;
+}
+
+.url_input {
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.url {
+    color: rgb(170, 170, 170);
+    font-size: 0;
+}
+
+.url span {
+    font-size: 14px;
+}
+
+.url_pre {
+    margin-left: 54px;
+}
+
+.tip_file {
+    font-size: 12px;
+    color: red;
+}
+
+.submit {
+    margin-left: 25%;
+    float: left;
+}
+
+.reset {
+    margin-right: 25%;
+    float: right;
+}

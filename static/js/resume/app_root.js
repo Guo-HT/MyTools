@@ -1,0 +1,1 @@
+var app_root = location.origin +'/resume/';

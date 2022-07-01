@@ -1,0 +1,25 @@
+
+.top-ten-title{
+    height: 32px;
+    line-height: 32px;
+    background-color: #D6ECF8;
+    padding-left: 1em;
+    font-weight: 700;
+}
+
+.top-ten-ul{
+    background-color: #F5F5F5;
+    margin-bottom: 16px;
+}
+
+.top-ten-ul li{
+    height: auto;
+    width: 90%;
+    padding: 10px 5%;
+    color: #9C5666;
+    line-height: 24px;
+}
+
+.top-ten-ul li .layui-icon{
+    color:#bfbfbf;
+}

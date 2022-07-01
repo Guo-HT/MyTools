@@ -1,0 +1,58 @@
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/upload_file.js"></script>
+<script src="/static/js/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="/static/css/toolsbox/upload_file.css">
+<link rel="stylesheet" href="/static/css/toolsbox/clearfix.css">
+<script>
+    $(function () {
+        // var app_root = 'http://' + location.host + '/tools/';
+        // 启用富文本编辑器
+        var liasionContent = CKEDITOR.replace('liasionContent', {
+            filebrowserUploadUrl: app_root + 'ckeditor_upload',
+            height: 400,
+            extraPlugins: ['codesnippet', 'uploadimage', 'prism', 'widget', 'lineutils',],
+        });
+    })
+</script>
+{% endblock static_link %}
+
+{% block page_sidebar %}
+{% endblock %}
+
+{% block main_content %}
+<h2 class="title">文件上传：</h2>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12 upload clearfix">
+            <form action="/tools/upload_ajax" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="tool_name">文件名：</label><input type="text" name="tool_name" id="tool_name" /><span
+                    id="tool_name_tip"></span>
+                <hr>
+                <div class="rich_editor clearfix">
+                    <label for="liasionContent" class="intro_label">介绍：</label><textarea rows="20" class="form-control"
+                        name="liasionContent" id="liasionContent"></textarea><br>
+                    <div class="tool_file_tip">*注：为尊重版权，请附带软件官网链接。</div>
+                </div>
+                <hr>
+                <label for="tool_ico">文件图标：</label><input type="file" name="tool_ico" id="tool_ico" />
+                <hr>
+                <label for="tool_file">文件：</label><input type="file" name="tool_file" id="tool_file" />
+                <span class="tool_file_tip">*注：如果软件包含多个文件，请压缩到一个文件后上传，谢谢！</span>
+                <hr>
+                <div class="submit-buttons">
+                    <input type="submit" value="上 传" id="submit_file"><input type="reset" id="reset_btn" value="重 置">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main_content %}
+
+</body>
+
+</html>

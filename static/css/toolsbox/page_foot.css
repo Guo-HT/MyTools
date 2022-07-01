@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tail {
+    width: 100%;
+    height: 50px;
+    min-width: 1030px;
+    background-color: rgb(248,248,248);
+    /*position: relative;*/
+    text-align: center;
+    font-size: 10px;
+    color: gray;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.tail span {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.line1 {
+    text-align: center;
+    position: relative;
+}
+
+.about,
+.contact,
+.ad,
+.join,
+.domain,
+.support_us {
+    position: relative;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.about_list, .contact_list, .ad_list, .join_list , .domain_list,.support_us_list{
+    position: absolute;
+    background-color: rgb(231,231,231);
+    text-align: center;
+    font-size: 6px;
+    line-height: 20px;
+    padding: 10px 5px;
+    overflow: hidden;
+    display: none;
+    color: gray;
+    font-weight: bolder;
+    border:2px rgb(211,211,211) solid;
+    border-radius: 4px;
+    /* cursor: pointer; */
+    z-index:10;
+
+}
+
+.about_list {
+    width: 120px;
+    height: 75px;
+    top: -95px;
+    left: -35px;
+}
+
+.about:hover .about_list {
+    display: inherit;
+}
+
+.contact_list {
+    width: 180px;
+    height: 50px;
+    top: -70px;
+    left: -65px;
+}
+
+.contact:hover .contact_list {
+    display: inherit;
+}
+
+.contact_list ul {
+    display: block;
+    width: 100%;
+}
+
+.contact_list ul li {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+}
+
+.contact_list ul li:hover {
+    background-color: rgb(211,211,211);
+}
+
+.ad_list {
+    width: 180px;
+    height: 35px;
+    top: -55px;
+    left: -65px;
+}
+
+.ad:hover .ad_list {
+    display: inherit;
+}
+
+.join_list {
+    width: 180px;
+    height: 55px;
+    top: -75px;
+    left: -65px;
+}
+
+.join:hover .join_list {
+    display: inherit;
+}
+
+
+.domain_list {
+    width: 340px;
+    height: 50px;
+    top: -70px;
+    left: -145px;
+}
+
+.domain:hover .domain_list {
+    display: inherit;
+}
+
+.domain_list ul {
+    display: block;
+    width: 100%;
+}
+
+.domain_list ul li {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+}
+
+.domain_list ul li:hover {
+    background-color: rgb(211,211,211);
+}
+
+
+.support_us_list {
+    width: 300px;
+    height: 200px;
+    top: -220px;
+    left: -135px;
+}
+
+.support_us:hover .support_us_list {
+    display: inherit;
+}
+
+.support{
+    border-radius: 5px;
+    width:20px;
+}
+
+
+.tail a{
+    text-decoration: none;
+    font-weight: bold;
+}

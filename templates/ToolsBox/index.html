@@ -1,0 +1,57 @@
+
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block static_link %}
+<link rel="stylesheet" href="/static/css/toolsbox/index.css">
+<script src="/static/js/toolsbox/index_get_tools.js"></script>
+{% endblock static_link %}
+
+{% block main_content %}
+<div class="layui-row main-content">
+    <!-- 站点介绍 start -->
+    <div class="layui-col-lg2 layui-col-lg-offset1 layui-col-md3 layui-col-md-offset1 website-intro">
+        <div class="dev-intro">
+            <img src="/static/img/icon-hacker.png" alt="" class="info-head" />
+            <div><span>《工具人的工具箱》致力于分享高效、好用的工具软件，助你工作顺利。</span></div>
+            <div><span>Guo-HT</span>-<span>全栈/安全开发</span></div>
+            <div><span>毕业于 SXU 软件工程专业，擅长前后端开发及网络安全攻防等。现就职于****企业从事网络安全相关工作。</span></div>
+        </div>
+        <div class="my-link">
+            <div><span>GitHub</span><span>代码仓库</span><span><a href="https://github.com/Guo-HT">Guo-HT</a></span></div>
+            <div><span>Gitee</span><span>代码仓库</span><span><a href="https://gitee.com/guo-hanting">guo-hanting</a></span></div>
+            <div><span>BiliBili</span><span>视频平台</span><span><a href="https://space.bilibili.com/391649362">火腿锅</a></span></div>
+        </div>
+        <div class="my-link">
+            <div><a class="my-link-a" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1622761893@qq.com" target="_blank">联系我</a></div>
+            <div><a class="my-link-a" href="/tools/ban" target="_blank">禁用IP</a></div>
+            <div><a class="my-link-a" href="/tools/status" target="_blank">服务器状态</a></div>
+        </div>
+
+    </div>
+    <!-- 站点介绍 end -->
+    <!-- 工具列表 start -->
+    <div class="layui-col-lg8 layui-col-md7 layui-col-sm12 layui-col-xs12">
+        <div class="layui-row tool-list" id="tool-list">
+            <!-- <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12 each-card">
+                <a href="#">
+                    <div class="card-img">
+                        <img src="http://mosquitto.org/images/mosquitto-text-side-28.png" alt="图片" />
+                    </div>
+                    <div class="info">
+                        <h3>123123111111111111111111111111111111111111111111111111111111111</h3>
+                        <p class="summary">
+                            1231231231231231231231231231231111111111111111111111111111111111111111111111111111111111122222222222111111111111111111111111111111
+                        </p>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+        <!-- 分页 start -->
+        <div class="page-nav" id="page-nav"></div>
+        <script>
+        </script>
+        <!-- 分页 end -->
+    </div>
+    <!-- 工具列表 end -->
+</div>
+{% endblock %}

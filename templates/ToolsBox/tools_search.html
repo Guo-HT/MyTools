@@ -1,0 +1,47 @@
+{% extends 'ToolsBox/page_head_foot.html' %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/tool_search_show.js"></script>
+<script src="/static/js/toolsbox/get_top10.js"></script>
+<link rel="stylesheet" href="/static/css/toolsbox/search_tool.css">
+<link rel="stylesheet" href="/static/css/toolsbox/top_ten.css">
+<link rel="stylesheet" href="/static/css/toolsbox/font-awesome.min.css">
+
+{% endblock static_link %}
+
+{% block main_content %}
+    {#  加载动画  #}
+    <div class="loading-div">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw "></i>
+        <span class="sr-only">搜索中...</span>
+    </div>
+
+    <div class="layui-row main-content" id="search-content">
+        <div class="layui-col-lg2 layui-col-lg-offset1 layui-col-md2 layui-col-md-offset1 recommand">
+            <div class="top-ten-title">下载排行</div>
+            <ul class="top-ten-ul" id="download-top-ten">
+
+            </ul>
+            <div class="top-ten-title">浏览排行</div>
+            <ul class="top-ten-ul" id="browser-top-ten">
+
+            </ul>
+
+        </div>
+        <div class="layui-col-lg8 layui-col-md8 layui-col-sm12 layui-col-xs12 search-result">
+            <h2 class="search-key-box">“&nbsp;<span id="search-key"></span>&nbsp;”&nbsp;&nbsp;的搜索结果：</h2>
+            <ul class="search-result-ul" id="search-result-ul">
+                <!-- <li class="search-result-li">
+                    <a href="#">
+                        <img src="/images/icon-hacker.png" alt="" class="tool-img" title="PyCharm-Professional"/>
+                        <span class="tool-name">PyCharm-Professional</span>
+                        <span class="tool-describe">你好世界 hello world!你好世界 hello world!</span>
+                    </a>
+                </li> -->
+            </ul>
+            <div class="search-page-nav" id="search-page-nav"></div>
+
+        </div>
+    </div>
+
+{% endblock %}

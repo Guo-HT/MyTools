@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/toolsbox/app_root.js"></script>
+    <title>Document</title>
+    <base href="/">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(224, 224, 224);
+        }
+
+        .box_out {
+            margin: 0;
+            padding: 0;
+            height: 310px;
+            width: 100%;
+        }
+
+        @keyframes jumping {
+            from {
+                transform: scale(0.4);
+            }
+
+            to {
+                transform: scale(1.6);
+            }
+        }
+
+        .box_in {
+            height: 190px;
+            width: 210px;
+            margin: 150px auto 0;
+            /* border:#000 solid 1px; */
+            position: relative;
+            animation: jumping 1.5s ease 0s infinite alternate;
+        }
+
+        .left_heart {
+            height: 175px;
+            width: 100px;
+            /* border:1px solid #000; */
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            transform: rotate(-45deg);
+            display: inline-block;
+            position: absolute;
+            left: 28px;
+        }
+
+        .right_heart {
+            height: 175px;
+            width: 100px;
+            /* border:1px solid #000; */
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            transform: rotate(45deg);
+            display: inline-block;
+            position: absolute;
+            right: 28px;
+        }
+
+        .left_heart,
+        .right_heart {
+            background-color: red;
+        }
+
+        .text {
+            height: 30px;
+            width: 150px;
+            /* border:1px solid #000; */
+            font-family: 'STXinwei';
+            position: absolute;
+            left: 30px;
+            top: 80px;
+            text-align: center;
+        }
+
+        #time {
+            height: 70px;
+            width: 50%;
+            margin: 30px auto 0;
+            color: blue;
+            font-family: 'STXinwei';
+            font-size: 50px;
+            text-align: center;
+            line-height: 70px
+        }
+        .left_heart:hover, .right_heart:hover, .text{
+            cursor:pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oTime = document.getElementById('time');
+            var tTogether = new Date(2020, 11 - 1, 20, 0, 0, 0);
+
+            function fn_Cal_date() {
+                var t_now = new Date();
+                var total_seconds = parseInt(t_now - tTogether) / 1000;
+                var day = parseInt(total_seconds / 86400);
+                var hour = parseInt(total_seconds % 86400 / 3600);
+                var min = parseInt(total_seconds % 86400 % 3600 / 60);
+                var sec = total_seconds % 60;
+                oTime.innerHTML = "我们在一起" + day + "天啦！";
+            }
+
+            fn_Cal_date();
+            setInterval(fn_Cal_date, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box_out">
+        <div class="box_in">
+            <div class="left_heart"></div>
+            <div class="right_heart"></div>
+            <div class="text">我们永远在一起！</div>
+        </div>
+    </div>
+    <div id="time"></div>
+</body>
+</html> 

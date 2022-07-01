@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>简历</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+    <script src="/static/js/resume/app_root.js"></script>
+    <script src="/static/js/toolsbox/get_csrf_token.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var path_list = location.pathname.split("/");
+            var list_length = path_list.length;
+            var name=path_list[list_length-1];
+            $("#displayPdfIframe").attr("src", '/static/js/pdfjs/web/viewer.html?file=' + encodeURIComponent(location.origin+'/upload_files/pdf/'+name+'.pdf'));
+            $("title").text("简历 | "+name);
+
+            $.ajax({
+                url:app_root+"watch_num",
+                type:"get",
+                dataType:"json",
+                data:{
+                    file_name:name,
+                },
+            }).done(function(msg){
+                console.log(msg);
+            })
+            .fail(function(e){
+                console.log(e);
+            })
+        });
+    </script>
+</head>
+<body style="margin: 0;padding: 0;">
+
+<div class="ctrlDiv">
+    <div class="eleContainer elePaddingBtm">
+        <iframe id="displayPdfIframe" style="width:100%;min-height: calc(100vh);margin: 0;border:0;"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

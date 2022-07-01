@@ -1,0 +1,86 @@
+.register_main {
+    width: 800px;
+    margin: 80px auto;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    padding-top: 10px;
+    border: 2px solid rgb(210, 210, 210);
+}
+
+.register_main h2 {
+    text-align: center;
+}
+
+.register_main hr {
+    border: 0;
+    background-color: red;
+    height: 5px;
+    width: 400px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.register_main form {
+    display: block;
+    width: 500px;
+    padding-left: 240px;
+}
+
+.register_main form span {
+    display: inline-block;
+    font-size: 10px;
+    color: gray;
+}
+
+.register_main label {
+    display: inline-block;
+    height: 20px;
+    width: 80px;
+}
+
+.register_main form label, .register_main form input {
+    margin: 10px auto 10px;
+}
+
+.register_main form hr {
+    background-color: rgb(238, 238, 238);
+    height: 2px;
+    border: 0;
+}
+
+.register {
+    display: inline-block;
+    height: 24px;
+    width: 60px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+.space_front{
+    display:inline-block;
+    width:27px;
+}
+.space_btn {
+    display: inline-block;
+    width: 150px;
+}
+
+.reset_btn {
+    display: inline-block;
+    height: 24px;
+    width: 60px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bolder;
+}
+
+.tail{
+    position:fixed;
+    bottom: 0;
+}
+.touch_me{
+    text-indent: 7em;
+    color: gray;
+    font-size: 12px;
+}

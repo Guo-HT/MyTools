@@ -1,0 +1,70 @@
+{% extends 'ToolsBox/page_head_foot.html' %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/tool_detail.js"></script>
+<script src="/static/js/toolsbox/tool_detail_comment.js"></script>
+    <script src="/static/js/toolsbox/tool_detail_good.js"></script>
+    <script src="/static/js/toolsbox/get_top10.js"></script>
+    <link rel="stylesheet" href="/static/css/toolsbox/top_ten.css">
+    <link rel="stylesheet" href="/static/css/toolsbox/font_family_css.css">
+    <link rel="stylesheet" href="/static/css/toolsbox/tool_detail.css">
+{% endblock static_link %}
+
+{% block main_content %}
+    <div class="layui-row">
+        <div class="layui-col-lg2 layui-col-lg-offset1 layui-col-md2 layui-col-md-offset1 recommand">
+            <div class="top-ten-title">下载排行</div>
+            <ul class="top-ten-ul" id="download-top-ten">
+
+            </ul>
+            <div class="top-ten-title">浏览排行</div>
+            <ul class="top-ten-ul" id="browser-top-ten">
+
+            </ul>
+        </div>
+        <div class="layui-col-lg8 layui-col-md8 layui-col-sm12  layui-col-xs12 main_content">
+            <ul class="content_ul">
+                <li>
+                    <img id="img_icon" src="" alt="图标" width="96px" height="96px">
+                    <h1></h1>
+                </li>
+                <hr>
+                <li>
+                    <h3>软件简介：</h3>
+                    <div class="tool_detail_content" id="tool_detail_content"></div>
+                    <hr>
+                </li>
+                <li>
+                    浏览量：<span id="tool_watch"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    发布时间：<span id="upload_time"></span>
+                </li>
+                <li class="download_btn" id="download_btn">
+                </li>
+            </ul>
+            <hr>
+            {#    发表评论 start   #}
+            <div class="layui-row submit_comment_div clearfix">
+                <div class="layui-col-lg10 layui-col-md10 layui-col-sm10 layui-col-xs10">
+                    <textarea name="up_comment_text" class="up_comment_text" id="up_comment_text" style="resize:none;"></textarea>
+                </div>
+                <div class="layui-col-lg2 layui-col-md2 layui-col-sm2 layui-col-xs2">
+                    <input type="button" class="submit_btn" id="submit_btn">
+                </div>
+            </div>
+            <br>
+            {#    发表评论 end   #}
+    
+            {#    评论内容    #}
+            <div class="comment" id="comment">
+                <span class="comment_count" id="comment_count"></span> 评论
+                <hr>
+                {#      评论内容      #}
+                <ul class="comment_ul" id="comment_ul">
+                </ul>
+                {#      评论区分页      #}
+    
+                <div class="comment_nav_ul" id="comment-page-nav"></div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

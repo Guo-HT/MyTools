@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/img/tools-icon.png">
+    <title>404 Not Found</title>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var $body = $("body");
+            setInterval(function () {
+                $body.css({"height": window.innerHeight, "width": window.innerWidth});
+                $body.find("img").css({"display": "block", "height": window.innerHeight, "width": window.innerWidth});
+            }, 30);
+        })
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="image_not_found"><img src="/static/img/blue_wall_404.png" alt="404 NOT FOUND"></div>
+</body>
+</html>

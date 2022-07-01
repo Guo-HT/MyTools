@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 100px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.main_content {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cpu_info, .mem, .disk, .open {
+    background-color: rgb(230, 230, 230);
+    margin: 20px 0;
+    line-height: 50px;
+    border-radius: 10px;
+}
+
+.cpu_info {
+    cursor: pointer;
+}
+
+.cpu_total_percent_data, .cpu_temp_data, .mem_total_data, .mem_available_data, .mem_percent_data, .disk_total_data, .disk_percent_data{
+    display: inline-block;
+    width: 170px;
+    text-align: left;
+    margin: 0 0 0 10px;
+}
+
+.open_date_data, .open_time_data {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+    margin: 0 0 0 10px;
+}
+
+
+.cpu_out_box, .mem_out_box, .disk_out_box {
+    width: 50px;
+    height: 14px;
+    position: relative;
+    background-color: rgb(204, 204, 204);
+    display: inline-block;
+    border-radius: 4px;
+    float: right;
+    margin: 18px 60px 18px 0;
+
+}
+
+.cpu_inner_box, .mem_inner_box, .disk_inner_box {
+    height: 14px;
+    position: absolute;
+    background-color: rgb(122, 194, 60);
+    border-radius: 4px;
+
+}
+
+.cpu_core {
+    padding-left: 300px;
+    text-align: left;
+    line-height: 30px;
+
+}
+
+.cpu_core_percent {
+    display: none;
+}
+
+.cpu_core:hover {
+    background-color: rgb(230, 230, 230);
+}

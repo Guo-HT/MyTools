@@ -1,0 +1,90 @@
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/personal_info_show.js"></script>
+<link rel="stylesheet" href="/static/css/toolsbox/personal_detail.css">
+
+{% endblock static_link %}
+
+{% block main_content %}
+    
+<div class="layui-container">
+    <div class="layui-tab">
+        <ul class="layui-tab-title" id="tab-title">
+            <li class="layui-this">个人信息</li>
+            <li>浏览历史</li>
+            <li>上传历史</li>
+            <li>下载历史</li>
+        </ul>
+        <div class="layui-tab-content" id="tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-row">
+                    <div class="layui-col-lg6 layui-col-lg-offset3 layui-col-md8 layui-col-md-offset2 layui-col-sm10 layui-col-md-offset1 layui-col-xs12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户ID</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-id">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-name">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录密码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-passwd" disabled value="若需要，请到登录页修改">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">绑定邮箱</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-email">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">注册时间</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-reg-time">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">真实姓名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" class="layui-input" id="user-real-name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <ul class="layui-row"  id="tab-item-watch">
+                </ul>
+                <div id="watch-page-nav" class="personal-nav"></div>
+            </div>
+            <div class="layui-tab-item">
+                <ul class="layui-row"  id="tab-item-upload">
+
+                </ul>
+                <div id="upload-page-nav" class="personal-nav"></div>
+            </div>
+            <div class="layui-tab-item">
+                <ul class="layui-row" id="tab-item-download">
+                    
+                </ul>
+                <div id="download-page-nav" class="personal-nav"></div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+    </script>
+</div>
+
+{% endblock main_content %}

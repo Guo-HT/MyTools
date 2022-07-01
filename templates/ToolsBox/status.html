@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器设备信息</title>
+    <base href="/">
+    <script src="/static/js/toolsbox/app_root.js"></script>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script src="/static/js/toolsbox/get_status.js"></script>
+    <script src="/static/js/toolsbox/get_csrf_token.js"></script>
+    <link rel="stylesheet" href="/static/css/toolsbox/status.css">
+</head>
+<body>
+<div class="main_content">
+    <h1>服务器设备信息：</h1>
+    <ul class="device_info">
+        <li class="cpu" id="cpu">
+            <div class="cpu_info" id="cpu_info">
+                <span class="cpu_total_percent_data"><span>CPU总使用率：</span><span class="cpu_total_percent" id="cpu_total_percent"></span></span>
+                <span class="cpu_temp_data"><span>CPU温度：</span><span class="cpu_temp" id="cpu_temp"></span></span>
+                <div class="cpu_out_box">
+                    <div class="cpu_inner_box"></div>
+                </div>
+            </div>
+            <div class="cpu_core_percent_div">
+                <ul class="cpu_core_percent" id="cpu_core_percent"></ul>
+            </div>
+        </li>
+        <li class="mem" id="mem">
+            <div>
+                <span class="mem_total_data"><span>内存空间：</span><span id="mem_total"></span></span>
+                <span class="mem_available_data"><span>内存可用：</span><span id="mem_available"></span></span>
+                <span class="mem_percent_data"><span>内存占用率：</span><span id="mem_percent"></span></span>
+                <div class="mem_out_box">
+                    <div class="mem_inner_box"></div>
+                </div>
+            </div>
+
+        </li>
+        <li class="disk" id="disk">
+            <div>
+                <span class="disk_total_data"><span>磁盘空间：</span><span id="disk_total"></span></span>
+                <span class="disk_percent_data"><span>磁盘使用率：</span><span id="disk_percent"></span></span>
+                <div class="disk_out_box">
+                    <div class="disk_inner_box"></div>
+                </div>
+            </div>
+        </li>
+        <li class="open" id="open">
+            <div>
+                <span class="open_date_data"><span>开机时间：</span><span id="open_date"></span></span>
+                <span class="open_time_data"><span>开机时长：</span><span id="open_time"></span></span>
+            </div>
+        </li>
+    </ul>
+    <!--<h4><a href="/tools/index">返回站点主页</a></h4>-->
+</div>
+</body>
+</html>

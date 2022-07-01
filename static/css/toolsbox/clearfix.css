@@ -1,0 +1,13 @@
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /*兼容性设置*/
+    /*IE浏览器独有的属性，负责网页缩放属性设置*/
+}

@@ -1,0 +1,69 @@
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block page_sidebar %}
+<link rel="stylesheet" href="/static/css/toolsbox/login.css">
+<script src="/static/js/toolsbox/login.js"></script>
+<script src="/static/js/sliderVerify.js"></script>
+{% endblock %}
+
+{% block main_content %}
+<div class="layui-container">
+    <div class="layui-row">
+        <div
+            class="layui-col-md6 layui-col-sm10 layui-col-xs12 layui-col-md-offset3 layui-col-sm-offset1">
+            <form class="layui-form user-form">
+                <h2>登录</h2>
+                <hr>
+                <!-- 用户名 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名/邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="user-name" required lay-verify="required" placeholder="用户名/邮箱"
+                            autocomplete="off" class="layui-input" id="user-name">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="tip-user-name"></div>
+                </div>
+                <!-- 密码框 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                            autocomplete="off" class="layui-input" id="user-password">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="tip-password"></div>
+                </div>
+                <!-- 滑块验证 start -->
+                <div class="layui-form-item">
+                    <!-- <label class="layui-form-label">滑动验证</label> -->
+                    <div class="layui-input-block" style="display:block;">
+                        <div id="slider"></div>
+                    </div>
+                </div>
+                <!-- 记住我 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">记住我</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" name="is-remember" lay-skin="primary" id="is-remember" checked>
+                        <a href="/tools/fotget">忘记/修改密码</a>
+                        <a href="/tools/register">注册</a>
+                    </div>
+                </div>
+                <!-- 按钮 start -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="submit">立即登录</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+    });
+</script>
+
+{% endblock main_content %}

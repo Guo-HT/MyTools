@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/img/tools-icon.png">
+    <title>请求别人的主页可不乖哦！</title>
+    <base href="/">
+    <script src="/static/js/toolsbox/app_root.js"></script>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <style>
+        .refuse_div {
+            width: 800px;
+            margin: 30px auto;
+            background-color: rgb(230, 230, 230);
+            border-radius: 10px;
+            padding: 30px;
+            border: 2px solid rgb(210, 210, 210);
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $("#refuse_div").css({"margin-top":((window.innerHeight - 230) / 2)});
+            },30)
+        })
+    </script>
+</head>
+<body>
+<div class="refuse_div" id="refuse_div">
+    <h2>服务器拒绝您访问其他用户的个人主页</h2>
+    <h2>点击链接返回站点主页</h2>
+    <h4><a href="/tools/index">主页</a></h4>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传简历</title>
+    <link rel="stylesheet" href="/static/css/resume/upload_resume.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/js/parse_cookie.js"></script>
+    <script src="/static/js/resume/upload_resume.js"></script>
+
+</head>
+<body>
+    <div class="main" id="main">
+        <h2>填写信息</h2>
+        <form action="/resume/upload_file" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="url_input">名字：</label>
+            <input type="text" name="url_input" id="url_input" class="url_input" placeholder="填写url中的信息" />
+            <br> <br>
+            <span class="url">
+                <span class="url_pre">访问链接：</span><br>
+                <span class="url_pre">https://guohtgo.asuscomm.com/resume/view/</span>
+                <span id="url_show">填写示例</span>
+            </span>
+            <br> <br>
+            <label for="resume_pdf">简历：</label><input type="file" name="resume_pdf" id="resume_pdf" class="resume_pdf">
+            <span class="tip_file" id="tip_file">请上传.pdf文件</span>
+            <br> <br> <br>
+            <input type="checkbox" name="is_public" id="is_public" checked="checked"><label for="is_public">是否公开</label>
+            <br> <br>
+            <span class="current_resume">查看当前简历：<span class="current_resume_url" id="current_resume_url1"></span>&nbsp;&nbsp;&nbsp;<span class="current_resume_url" id="current_resume_url2"></span></span>
+            <br> <br>
+            <input type="submit" value="提交" id="submit" class="submit" disabled>
+            <input type="reset" value="重置" id="reset" class="reset">
+        </form>
+    </div>
+    
+</body>
+<script src="/static/js/resume/modify_resume_alert.js"></script>
+</html>

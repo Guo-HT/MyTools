@@ -1,0 +1,73 @@
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block static_link %}
+<script src="/static/js/toolsbox/forget_pwd.js"></script>
+<link rel="stylesheet" href="/static/css/toolsbox/login.css">
+{% endblock static_link %}
+
+{% block main_content %}
+<div class="layui-container">
+    <div class="layui-row">
+        <div
+            class="layui-col-lg6 layui-col-md6 layui-col-sm12 layui-col-xs12 layui-col-lg-offset3 layui-col-md-offset3">
+            <form class="layui-form user-form">
+                <h2>密码找回 / 修改</h2>
+                <hr>
+                <!-- 邮箱 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="email" required lay-verify="required|email" placeholder="已绑定的邮箱"
+                            autocomplete="off" class="layui-input" id="user-email">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="tip-user-email"></div>
+                </div>
+                <!-- 邮箱验证 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">验证码</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="verify" required lay-verify="required" placeholder="邮箱验证码"
+                            autocomplete="off" class="layui-input" id="user-verify">
+                    </div>
+                    <input type="button" class="layui-btn layui-btn-xs get-verify" id="get-verify" value="获取验证码">
+                </div><br>
+                <!-- 密码框 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                            autocomplete="off" class="layui-input" id="user-password">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="tip-password"></div>
+                </div>
+                <!-- 密码框 start -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">确认密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="password-check" required lay-verify="required" placeholder="请确认密码"
+                            autocomplete="off" class="layui-input" id="user-password-check">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="tip-password-check"></div>
+                </div>
+                
+                <!-- 按钮 start -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="forget-submit" lay-filter="*">立即修改</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+        form.verify({
+            email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对'],
+        })
+    });
+</script>
+{% endblock main_content %}

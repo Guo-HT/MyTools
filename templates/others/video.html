@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="/">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+    <script src="/static/js/toolsbox/app_root.js"></script>
+</head>
+<body>
+<video id="media" src="" width="640" height="480" controls autoplay>您的浏览器不支持 video 标签 </video>
+</video>
+<br />
+<iframe src="//player.bilibili.com/player.html?aid=64489787&bvid=BV1i4411R7V4&cid=111949509&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</body>
+<script>
+    $(function () {
+            $("#media").attr('src', '/test_resp/?path=/video/Lang Lang, Tao Tsuchiya, Soshina - Beethoven_ Classical Music Medley.mp4');
+     })
+
+</script>
+</html>

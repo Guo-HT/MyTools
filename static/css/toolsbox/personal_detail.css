@@ -1,0 +1,45 @@
+
+.history-li{
+    display:block;
+    box-sizing: border-box;
+    padding:7px;
+}
+
+.history-li a{
+    display:block;
+    height:64px;
+    width: 100%;
+    border:1px solid #cccccc;
+    padding:4px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.history-li a img{
+    display:inline-block;
+    height: 100%;
+    margin-right:10px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.history-li a span{
+    line-height:56px;
+}
+
+.history-li a .tool-name{
+    font-weight:bold;
+    margin-right: 5px;
+}
+
+.history-li a .tool-time{
+    color:#888888;
+    float:right;
+}
+
+.personal-nav{
+    display: flex;
+    justify-content: space-around;
+}

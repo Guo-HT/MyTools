@@ -1,0 +1,80 @@
+.layui-nav {
+    position: relative;
+}
+.layui-nav-item{
+    min-width:68px;
+    text-align: center;
+}
+.layui-nav-item span{
+    display:inline-block;
+    max-width:50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.nav-search {
+    float: right;
+    margin: 11px;
+    position: relative;
+}
+
+.nav-search .search-input {
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    height: 38px;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.search-btn .layui-icon {
+    color: #000000;
+    display: flex;
+    height: 100%;
+    width: 38px;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.search-btn .layui-icon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.my-spread {
+    visibility: hidden;
+    /* display: none; */
+}
+
+@media (max-width:800px) {
+    .my-spread {
+        visibility: visible;
+        /* display: inherit; */
+    }
+
+    .layui-nav li:nth-child(1),
+    .layui-nav li:nth-child(2),
+    .layui-nav li:nth-child(3),
+    .layui-nav li:nth-child(4),
+    .layui-nav li:nth-child(5) {
+        display: none;
+    }
+
+    .nav-search {
+        width: 45%;
+        /* display: none; */
+    }
+}
+
+@media (min-width:970px) {
+    .nav-search {
+        width: 30%;
+        max-width: 300px;
+    }
+}

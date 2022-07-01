@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配速计算器</title>
+    <base href="/">
+    <script src="https://cdn.bootcss.com/vue/2.5.2/vue.js"></script>
+    <!-- <script src="./js/vue.js"></script> -->
+    <style>
+        body{
+            margin-top:5vh;
+        }
+        h3{
+            text-align: center;
+        }
+        .page{
+            width:85vw;
+            margin:20px auto;
+            /* background-color: aliceblue; */
+        }
+        .in{
+            text-align: center;
+        }
+        .inputLabel{
+            display: inline-block;
+            width:90px;
+            font-size:14px;
+        }
+        .inputLabelWidth{
+            display: inline-block;
+            width:130px;
+            line-height:30px;
+            font-size:14px;
+        }
+        .inInput{
+            margin-top:20px;
+        }
+        .timeInput{
+            width:5vw;
+        }
+        .inputData{
+            font-size:14px;
+        }
+        .btn{
+            width:10vw;
+            height:32px;
+            line-height: 32px;
+            margin:0 auto;
+            background-color: red;
+            text-align: center;
+            font-weight: bold;
+            color:white;
+            border-radius: 6px;
+            min-width: 50px;
+            font-size:14px;
+            cursor: pointer;
+        }
+        h4{
+            text-align: center;
+        }
+        .out{
+            padding-left:0;
+            text-align: center;
+            font-size:14px;
+        }
+        .result_name{
+            display:inline-block;
+            width:60px;
+            line-height:30px;
+            text-align: right;
+        }
+        .result_data span{
+            display:inline-block;
+            width:30px;
+            text-align: right;
+            margin:0 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>跑步配速计算器</h3>
+<div class="page" id="page">
+    <div class="in" id="in">
+        <label for="project" class="inputLabel">选择项目：</label>&nbsp;
+        <select name="project" id="project" @change="selectProj($event)">
+            <option v-for="each in options" :value="each.myValue" :name="each.name">[[each.name]]</option>
+        </select>
+        <br><br>
+        <div class="in_input" id="inInput">
+            <div v-if="isInputTime" class="inputData">
+                <span class="inputLabel">[[this.curTargetName]]时间：</span>&nbsp;
+                <input class="timeInput" type="text" v-model="input_h">小时
+                <input class="timeInput" type="text" v-model="input_m">分钟
+                <input class="timeInput" type="text" v-model="input_s">秒
+            </div>
+            <div v-if="isInputFoot">
+                <span class="inputLabel">步频/步幅：</span><br>
+                <span class="inputLabelWidth">步频（步/分钟）：</span><input type="text" v-model="stepFreq"><br>
+                <span class="inputLabelWidth">步幅（cm）：</span><input type="text" v-model="stepLength">
+            </div>
+            <div v-if="isBySelf">
+                <span class="inputLabel">距离：</span>&nbsp;
+                <input class="timeInput" type="text" v-model="curTargetLength">&nbsp;km<br>
+                <span class="inputLabel">时间：</span>&nbsp;
+                <input class="timeInput" type="text" v-model="input_h">小时
+                <input class="timeInput" type="text" v-model="input_m">分钟
+                <input class="timeInput" type="text" v-model="input_s">秒
+            </div>
+            <div v-if="isSpeed">
+                <span class="inputLabel">时速 : </span>&nbsp;
+                <input class="timeInput" type="text" v-model="input_speed">&nbsp;km / h<br>
+            </div>
+        </div>
+        <br>
+        <div class="btn" @click="calTime">计 算</div>
+    </div>
+    <hr>
+    <!--  结果 start  -->
+    <h4>计 算 结 果 ：</h4>
+    <div class="out">
+        <div v-for="each in dataShow"><span class="result_name">[[each.name]]&nbsp;:</span><span class="result_data"><span>[[each.h]]</span>:<span>[[each.m]]</span>:<span>[[each.s]]</span></span></div>
+        <div><span class="result_name">时 速&nbsp;:</span><span class="result_data"><span>[[curSpeed]]</span>&nbsp;<span>km/h</span>&nbsp;<span>&nbsp;</span></span></div>
+    </div>
+    <!--  结果 end  -->
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        delimiters: ["[[", "]]"],
+        el: "#page",
+        data: {
+            totalSeconds: 0,
+            options: [{name: "全 马", myValue: "full", distance: 42.195, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "半 马", myValue: "half", distance: 21.0975, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "15 km", myValue: "15km", distance: 15, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "10 km", myValue: "10km", distance: 10, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "5 km", myValue: "5km", distance: 5, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "3 km", myValue: "3km", distance: 3, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "1 km", myValue: "1km", distance: 1, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "步频/步幅", myValue: "foot", distance: 0, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "时 速", myValue: "speed", distance: 0, totalSec: 0, h: 0, m: 0, s: 0},
+                {name: "自定义", myValue: "bySelf", distance:0, totalSec: 0, h: 0, m: 0, s: 0},
+            ],
+            curTargetValue: "full",
+            curTargetName: "全马",
+            curTargetLength: 42.195,
+            curSpeed: 0,
+            isInputTime: true,
+            isInputFoot: false,
+            isBySelf: false,
+            isSpeed: false,
+            input_speed: 0,
+            input_h: 0,
+            input_m: 0,
+            input_s: 0,
+            stepFreq: 0,
+            stepLength: 0,
+        },
+        methods: {
+            // 选择项目后的数据配置
+            selectProj: function (event) {
+                this.input_h = 0;
+                this.input_m = 0;
+                this.input_s = 0;
+                this.totalSeconds = 0;
+                this.input_speed = 0;
+                this.curSpeed = 0;
+                this.stepFreq = 0;
+                this.stepLength = 0;
+                this.curTargetValue = event.target.value;  // 获取点击事件
+                //提取其他数据到全局
+                for (var i = 0; i < this.options.length; i++) {
+                    this.options[i].totalSec = 0;
+                    this.options[i].h = 0;
+                    this.options[i].m = 0;
+                    this.options[i].s = 0;
+                    if (this.curTargetValue === this.options[i].myValue) {
+                        this.curTargetName = this.options[i].name;
+                        this.curTargetLength = this.options[i].distance;
+                    }
+                }
+                if (this.curTargetValue !== "foot" && this.curTargetValue!=="bySelf" && this.curTargetValue!=="speed") {
+                    this.isInputFoot = false;
+                    this.isBySelf = false;
+                    this.isInputTime = true;
+                    this.isSpeed = false;
+                } else if(this.curTargetValue === "foot"){
+                    this.isInputFoot = true;
+                    this.isInputTime = false;
+                    this.isBySelf = false;
+                    this.isSpeed = false;
+                }
+                else if(this.curTargetValue === "bySelf"){
+                    this.isInputTime = false;
+                    this.isInputFoot = false;
+                    this.isBySelf = true;
+                    this.isSpeed = false;
+                }
+                else if(this.curTargetValue === "speed"){
+                    this.isInputTime = false;
+                    this.isInputFoot = false;
+                    this.isBySelf = false;
+                    this.isSpeed = true;
+                }
+            },
+            // 点击计算后数据计算
+            calTime: function () {
+                // 时间模式
+                var paceSeconds=0;
+                if (this.isInputTime || this.isBySelf) {
+                    this.totalSeconds = this.time2sec(this.input_h, this.input_m, this.input_s)
+                    paceSeconds = this.totalSeconds / this.curTargetLength;  // 每公里秒数
+                }
+                // 步频/步幅模式
+                else if (this.isInputFoot) {
+                    paceSeconds = 60*((1000*100/this.stepLength)/this.stepFreq);
+                }
+                else if (this.isSpeed){
+                    paceSeconds = 3600 / this.input_speed;
+                }
+                // 计算各长度时间
+                for (var i = 0; i < this.options.length; i++) {
+                    this.options[i].totalSec = paceSeconds * this.options[i].distance;
+                    var hms = this.sec2time(this.options[i].totalSec)
+                    this.options[i].h = hms.hour
+                    this.options[i].m = hms.minute
+                    this.options[i].s = hms.second
+                }
+                this.curSpeed = (3600 / paceSeconds).toFixed(2);
+            },
+            // 小时:分钟:秒 转换为 秒
+            time2sec: function (hours, minutes, seconds) {
+                return parseFloat(hours) * 3600 + parseFloat(minutes) * 60 + parseFloat(seconds);
+            },
+            // 秒 转换为 小时:分钟:秒
+            sec2time: function (totalSeconds) {
+                var hours = 0, minutes = 0, seconds = 0;
+                hours = Math.floor(totalSeconds / 3600);
+                minutes = Math.floor((totalSeconds - hours * 3600) / 60);
+                seconds = totalSeconds - hours * 3600 - minutes * 60;
+                return {"hour": hours, "minute": minutes, "second": seconds.toFixed(0)};
+            },
+
+        },
+        computed: {
+            dataShow: function () {
+                return this.options.filter(function (data) {
+                    return data.distance !== 0;
+                })
+            },
+        }
+    })
+</script>
+</html>

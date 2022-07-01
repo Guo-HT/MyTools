@@ -1,0 +1,168 @@
+@media(max-width:992px) {
+    .website-intro {
+        display: none;
+    }
+}
+
+.website-intro {
+    padding-right: 10px;
+}
+
+.dev-intro {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px rgb(200, 200, 200);
+
+}
+
+.dev-intro div:nth-child(3){
+    white-space:nowrap;
+}
+
+.dev-intro .info-head {
+    width: 45%;
+    border: 3px solid gold;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.dev-intro div {
+    min-height: 32px;
+    /* line-height:32px; */
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.dev-intro span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.my-link {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px rgb(200, 200, 200);
+    font-size: 12px;
+}
+
+.my-link div {
+    height:30px;
+    line-height:24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.my-link div span:nth-child(1){
+    width:20%;
+}
+.my-link div span:nth-child(2){
+    width:40%;
+    text-align: center;
+}
+.my-link div span:nth-child(3){
+    width:35%;
+    overflow: hidden;
+    text-overflow:ellipsis; 
+    text-align: center;
+}
+.my-link div span:nth-child(3) a{
+    display:block;
+    padding: 0 4px;
+    width:auto;
+    height:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #f5f5f5;
+    color: #777777;
+}
+
+.my-link .my-link-a{
+    display:block;
+    width:100%;
+    text-align: center;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+.each-card {
+    padding: 20px 10px;
+    height: 180px;
+}
+
+.each-card a {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgb(200, 200, 200);
+
+}
+
+.each-card a .card-img {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    vertical-align: top;
+}
+
+.each-card a .card-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.each-card a .info {
+    display: inline-block;
+    height:100%;
+    width: calc(100% - 130px);
+    padding-left: 10px;
+}
+
+.each-card a .info h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 8px;
+    height:24px;
+    white-space:nowrap;
+}
+
+.each-card a .info .summary {
+    text-indent: 2em;
+    overflow: hidden;
+    word-break:break-all;
+    max-height: calc(100% - 30px);
+    line-height: 22px;
+    text-overflow: ellipsis;
+    color: silver;
+}
+
+.page-nav {
+    display: flex;
+    justify-content: space-around;
+}

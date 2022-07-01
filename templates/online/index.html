@@ -1,0 +1,15 @@
+{% extends "ToolsBox/page_head_foot.html" %}
+
+{% block static_link %}
+<script src="/static/js/online/config.js"></script>
+<link rel="stylesheet" href="/static/css/online/index.css">
+{% endblock static_link %}
+
+{% block main_content %}
+<div class="layui-container">
+    <marquee behavior="alternate">静态页面，善于使用 &lt;&nbsp;CTRL&nbsp;&nbsp;+&nbsp;&nbsp;F&nbsp;&gt; 可提高工作效率。</marquee>
+    <div class="layui-row online-list-out" id="online-list">
+
+    </div>
+</div>
+{% endblock main_content %}

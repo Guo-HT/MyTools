@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历服务</title>
+    <link rel="stylesheet" href="/static/css/resume/index.css">
+    <link rel="stylesheet" href="/static/css/clearfix.css">
+    <link rel="stylesheet" href="/static/js/layui-v2.5.7/src/css/layui.css">
+    <script src="/static/js/layui-v2.5.7/src/layui.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/js/resume/app_root.js"></script>
+    <script src="/static/js/resume/have_resume.js"></script>
+    <script src="/static/js/resume/index_get_resume.js"></script>
+</head>
+<body>
+    {% extends "resume/page_head_foot.html" %}
+    {% block page_head %}
+    <div class="resume_page_head">
+        <div class="layui-carousel" id="resume_head">
+            <div carousel-item>
+                <div><img src="/static/img/roll01.jpg" class="roll-img" /></div>
+                <div><img src="/static/img/roll02.jpg" class="roll-img" /></div>
+                <div><img src="/static/img/roll03.jpg" class="roll-img" /></div>
+                <div><img src="/static/img/roll04.jpg" class="roll-img" /></div>
+                <div><img src="/static/img/roll05.jpg" class="roll-img" /></div>
+            </div>
+        </div>
+        <div><a href="/resume/upload" class="btn" id="btn">上传你的简历</a></div>
+    </div>
+    <script>
+        layui.use('carousel', function () {
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#resume_head',
+                height: "240px",
+                width: '100vw', //设置容器宽度
+                // arrow: 'always', //始终显示箭头
+                // anim: 'updown' //切换动画方式
+            });
+        });
+    </script>
+    {% endblock page_head %}
+
+    {% block main_content %}
+    <div class="resume_others clearfix" id="others">
+        <h3 class="others_title">看看大家</h3>
+        <ul class="resume_list" id="resume_list">
+            <!-- <li class="resume_li clearfix" >
+                <a href="/resume/show/ght" class="resume_a clearfix" target="_blank">
+                    <img src="/upload_files/Resume/ght.png" alt="简历首页">
+                    <div class="resume_user">user_name</div>
+                </a>
+            </li> -->
+
+            
+
+            
+        </ul>
+
+        <ul class="page_nav" id="page_nav">
+        </ul>
+    
+        <div class="jump_page" id="jump_page">
+            共<span class="jump_label" id="jump_label"></span>页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            跳转到：<input type="text" id="jump_to_page"/>
+            <button id="jump_go">跳转</button>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+
+    
+    
+    {% endblock main_content %}
+    {% block page_sidebar %}
+    <span></span>
+    {% endblock page_sidebar %}
+    
+</body>
+
+
+</html>

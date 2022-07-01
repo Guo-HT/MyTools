@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历</title>
+    <script src="/static/js/PDFObject/pdfobject.min.js"></script>
+    <script src="/static/js/resume/app_root.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var path_list = location.pathname.split("/");
+        var list_length = path_list.length;
+        var name = path_list[list_length - 1];
+        PDFObject.embed("/upload_files/pdf/" + name + ".pdf");
+        $.ajax({
+            url: app_root + "watch_num",
+            type: "get",
+            dataType: "json",
+            data: {
+                file_name: name,
+            },
+        }).done(function (msg) {
+            console.log(msg);
+        })
+            .fail(function (e) {
+                console.log(e);
+            })
+    </script>
+</body>
+
+</html>
