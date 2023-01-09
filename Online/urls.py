@@ -9,4 +9,5 @@ from Online import views
 urlpatterns = [
     re_path(r'^$', views.index, name="index"),  # 主页
     re_path(r'^index$', views.index, name="index"),  # 主页
+    re_path(r'^epq_test$', views.epq_test, name="epq_test"),  # 主页
 ]

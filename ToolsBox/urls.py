@@ -45,10 +45,6 @@ urlpatterns = [
     re_path(r'^video$', views.video_show),  # 视频播放
     # re_path(r"^cmd$", views.cmd),
     # re_path(r'^cmd_run$', views.cmd_run),
-    re_path(r'^go$', views.go_out),
-    re_path(r"^cal$", views.cal),
-    re_path(r"^love$", views.love),
-    re_path(r"^paceCal$", views.paceCal),
     re_path(r"^resume/(.*)$", views.resume),
 
     re_path(r"^resume2/(.*)$", views.resume2),

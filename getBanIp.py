@@ -2,7 +2,7 @@ import redis
 
 
 # 建立redis链接
-redis_con = redis.StrictRedis(host="localhost", port=6379, db=2)
+redis_con = redis.StrictRedis(host="localhost",password="guoht990520_2_redis" ,port=6379, db=2)
 
 
 def get_ban_ip():

@@ -212,3 +212,6 @@ ALIPAY_NOTIFY_URL = "http://guohtgo.asuscomm.com:8001/tools/notify"
 # 用户名:  16227
 # 电子邮件地址:  1622761893@qq.com
 # Password:  guoht990520
+
+DOCS_URL = '/doc/'  # url
+DOCS_ROOT = BASE_DIR +'/doc/build/html'   # 文档路径

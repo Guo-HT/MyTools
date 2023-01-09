@@ -9,8 +9,8 @@ django.setup()
 
 from Resume.models import *
 # 创建一个Celery类的对象
-app = Celery("celery_tasks.tasks", broker="redis://:guoht990520_2_redis@127.0.0.1:6379/1")
-
+#app = Celery("celery_tasks.tasks", broker="redis://:guoht990520_2_redis@127.0.0.1:6379/1")
+from celery_tasks import app
 
 # 定义任务函数
 @app.task

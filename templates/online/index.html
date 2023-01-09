@@ -3,6 +3,12 @@
 {% block static_link %}
 <script src="/static/js/online/config.js"></script>
 <link rel="stylesheet" href="/static/css/online/index.css">
+<style>
+    .page-nav{
+        display:flex;
+        justify-content: space-around;
+    }
+</style>
 {% endblock static_link %}
 
 {% block main_content %}
@@ -11,5 +17,6 @@
     <div class="layui-row online-list-out" id="online-list">
 
     </div>
+    <div class="page-nav" id="page-nav"></div>
 </div>
 {% endblock main_content %}

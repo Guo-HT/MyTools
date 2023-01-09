@@ -767,10 +767,12 @@ def get_tools(requests):
     import json
     import urllib.parse
 
+    page_size = requests.GET.get("page_size")
     global tool_count_each_page
     tools_all = Tool.objects.filter(tool_is_checked=True).order_by('-tool_upload_time')   # 搜索所有
     total_count = len(tools_all)
-    paginator = Paginator(tools_all, tool_count_each_page)  # 每页几个
+    # paginator = Paginator(tools_all, tool_count_each_page)  # 每页几个
+    paginator = Paginator(tools_all, page_size)  # 每页几个
     cur_page = requests.GET.get('group', default='1')  # 获得跳转页参数
     page_num = paginator.num_pages  # 获得总页数
 
@@ -802,7 +804,7 @@ def get_tools(requests):
         tool_data["tool_intro"] = tool.tool_describe
         tool_list[f'tool_{i}'] = tool_data  # 加入总数据中
         i += 1
-    data_send = {"limit": tool_count_each_page,'total_count': total_count, 'total_page': page_num, 'cur_page': cur_page, 'tool_list': tool_list, 'media_url': settings.MEDIA_URL}
+    data_send = {"limit": page_size,'total_count': total_count, 'total_page': page_num, 'cur_page': cur_page, 'tool_list': tool_list, 'media_url': settings.MEDIA_URL}
     # 返回：总页数，页码，数据
     return JsonResponse(data_send, safe=False)
 
@@ -1239,14 +1241,6 @@ def ban_ip(request):
 def ban(request):
    return render(request, "ToolsBox/ban_ip.html")
 
-@timer
-def love(request):
-    return render(request, "ToolsBox/heart_jump.html")
-
-
-@timer
-def paceCal(request):
-    return render(request, "ToolsBox/paceCal.html")
 
 @timer
 def resume(request, name):

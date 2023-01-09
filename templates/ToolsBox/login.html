@@ -1,5 +1,9 @@
 {% extends "ToolsBox/page_head_foot.html" %}
 
+{% block title %}
+登录
+{% endblock title %}
+
 {% block page_sidebar %}
 <link rel="stylesheet" href="/static/css/toolsbox/login.css">
 <script src="/static/js/toolsbox/login.js"></script>
@@ -44,7 +48,7 @@
                     <label class="layui-form-label">记住我</label>
                     <div class="layui-input-block">
                         <input type="checkbox" name="is-remember" lay-skin="primary" id="is-remember" checked>
-                        <a href="/tools/fotget">忘记/修改密码</a>
+                        <a href="/tools/forget">忘记/修改密码</a>
                         <a href="/tools/register">注册</a>
                     </div>
                 </div>

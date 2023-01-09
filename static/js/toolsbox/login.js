@@ -82,10 +82,12 @@ $(function () {
                     $("#name_tip").text("");
                     $("#password_tip").text("  密码错误！");
                     $("#login_password").val("");
+                    layer.msg("用户名或密码错误");
                 } else if (data.state === "user_not_exist") {
                     $("#name_tip").text("  该用户不存在");
                     $("#login_name").val("");
                     $("#login_password").val("");
+                    layer.msg("该用户不存在");
                 }
             })
             .fail(function () {

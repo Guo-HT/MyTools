@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPQ人格测试</title>
+    <script>
+        var test_content = {
+            1: { "choice": 2 },
+            2: { "choice": 2 },
+            3: { "choice": 2 },
+            4: { "choice": 2 },
+            5: { "choice": 2 },
+            6: { "choice": 2 },
+            7: { "choice": 2 },
+            8: { "choice": 2 },
+            9: { "choice": 2 },
+            10: { "choice": 2 },
+            11: { "choice": 2 },
+            12: { "choice": 2 },
+            13: { "choice": 2 },
+            14: { "choice": 2 },
+            15: { "choice": 2 },
+            16: { "choice": 2 },
+            17: { "choice": 2 },
+            18: { "choice": 2 },
+            19: { "choice": 2 },
+            20: { "choice": 2 },
+            21: { "choice": 2 },
+            22: { "choice": 2 },
+            23: { "choice": 2 },
+            24: { "choice": 2 },
+            25: { "choice": 2 },
+            26: { "choice": 2 },
+            27: { "choice": 2 },
+            28: { "choice": 2 },
+            29: { "choice": 2 },
+            30: { "choice": 2 },
+            31: { "choice": 2 },
+            32: { "choice": 2 },
+            33: { "choice": 2 },
+            34: { "choice": 2 },
+            35: { "choice": 2 },
+            36: { "choice": 2 },
+            37: { "choice": 2 },
+            38: { "choice": 2 },
+            39: { "choice": 2 },
+            40: { "choice": 2 },
+            41: { "choice": 2 },
+            42: { "choice": 2 },
+            43: { "choice": 2 },
+            44: { "choice": 2 },
+            45: { "choice": 2 },
+            46: { "choice": 2 },
+            47: { "choice": 2 },
+            48: { "choice": 2 },
+            49: { "choice": 2 },
+            50: { "choice": 2 },
+            51: { "choice": 2 },
+            52: { "choice": 2 },
+            53: { "choice": 2 },
+            54: { "choice": 2 },
+            55: { "choice": 2 },
+            56: { "choice": 2 },
+            57: { "choice": 2 },
+            58: { "choice": 2 },
+            59: { "choice": 2 },
+            60: { "choice": 2 },
+            61: { "choice": 2 },
+            62: { "choice": 2 },
+            63: { "choice": 2 },
+            64: { "choice": 2 },
+            65: { "choice": 2 },
+            66: { "choice": 2 },
+            67: { "choice": 2 },
+            68: { "choice": 2 },
+            69: { "choice": 2 },
+            70: { "choice": 2 },
+            71: { "choice": 2 },
+            72: { "choice": 2 },
+            73: { "choice": 2 },
+            74: { "choice": 2 },
+            75: { "choice": 2 },
+            76: { "choice": 2 },
+            77: { "choice": 2 },
+            78: { "choice": 2 },
+            79: { "choice": 2 },
+            80: { "choice": 2 },
+            81: { "choice": 2 },
+            82: { "choice": 2 },
+            83: { "choice": 2 },
+            84: { "choice": 2 },
+            85: { "choice": 2 },
+        }
+
+        var E_list_yes = [1, 5, 9, 13, 16, 22, 29, 32, 35, 40, 43, 46, 49, 53, 56, 61, 72, 76, 85]
+        var E_list_no = [26, 37]
+
+        var N_list_yes = [3, 6, 11, 14, 18, 20, 24, 28, 30, 34, 36, 42, 47, 51, 54, 59, 63, 66, 67, 70, 74, 78, 82, 84]
+
+        var P_list_yes = [19, 23, 27, 38, 41, 44, 57, 58, 65, 69, 73, 77]
+        var P_list_no = [2, 8, 10, 17, 33, 50, 62, 80]
+
+        var L_list_yes = [12, 31, 48, 68, 79, 81]
+        var L_list_no = [4, 7, 15, 21, 25, 39, 45, 52, 55, 60, 64, 71, 75, 83]
+    </script>
+    <script src="/static/js/layui-v2.5.7/src/layui.js"></script>
+    <link rel="stylesheet" href="/static/js/layui-v2.5.7/src/css/layui.css">
+    <style>
+        .main{
+            padding: 5vh 5vw;
+        }
+
+        .scroll_progress_bar {
+            position: fixed;
+            top: 0;
+            width: 0%;
+            height: 5px;
+            background: #7983ff;
+            z-index: 10000;
+        }
+
+        .layui-form-item{
+            margin:0;
+            display:flex;
+            justify-content: center;
+        }
+
+        .layui-btn{
+            display:block;
+            margin: 20px auto ;
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', () => {
+            var scrollProgress = document.getElementById('scroll_progress_bar');
+            // 滚动条高度
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            // 当前进度条进度 = 当前滚动条位置 / 滚动条高度
+            scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+        });
+
+
+        layui.use(["form", "jquery", "layer"], function () {
+            var form = layui.form
+            var $ = layui.$
+            var layer = layui.layer
+
+            var E_score = 0
+            var N_score = 0
+            var P_score = 0
+            var L_score = 0
+            var score_rough = 0  // X
+
+
+            form.on("radio", function (data) {
+                var test_no = $(this).parent().parent().parent().prev().prev().text()
+
+                var choice;
+                if (data.value === "y") {
+                    choice = true
+                }
+                if (data.value === "n") {
+                    choice = false
+                }
+                // console.log(test_no + " - " + choice)
+                test_content[test_no]["choice"] = choice
+                // console.log(test_content);
+            })
+
+            $("#submit").click(function () {
+                // console.log(test_content)
+                for (var each in test_content) {
+                    var choice_each = test_content[each]["choice"]
+                    // console.log(choice_each)
+                    if (choice_each == 2) {
+                        layer.msg("请完成答题（第" + each + "题）")
+                        return
+                    }
+                }
+                score_rough = calc_rough()
+                send_result()
+                show_result(score_rough)
+            })
+
+            
+            function calc_rough(){
+				E_score = 0
+				N_score = 0
+				P_score = 0
+				L_score = 0
+				score_rough = 0
+                // 计算粗分
+                for(var each in test_content){
+                    if (E_list_yes.includes(parseInt(each)) && test_content[each]["choice"]){
+                        // console.log(each + " -- E_list_yes")
+                        E_score += 1
+                    }
+                    if (E_list_no.includes(parseInt(each)) && !test_content[each]["choice"]){
+                        // console.log(each + " -- E_list_no")
+
+                        E_score += 1
+                    }
+
+                    if (N_list_yes.includes(parseInt(each))&& test_content[each]["choice"]){
+                        // console.log(each + " -- N_list_yes")
+                        N_score += 1
+                    }
+
+                    if (P_list_yes.includes(parseInt(each)) && test_content[each]["choice"]){
+                        // console.log(each + " -- P_list_yes")
+                        P_score += 1
+                    }
+                    if (P_list_no.includes(parseInt(each)) && !test_content[each]["choice"]){
+                        // console.log(each + " -- P_list_no")
+                        P_score += 1
+                    }
+
+                    if (L_list_yes.includes(parseInt(each)) && test_content[each]["choice"]){
+                        // console.log(each + " -- L_list_yes")
+                        L_score += 1
+                    }
+                    if (L_list_no.includes(parseInt(each)) && !test_content[each]["choice"]){
+                        // console.log(each + " -- L_list_no")
+                        L_score += 1
+                    }
+                }
+                return E_score+N_score+P_score+L_score
+            }
+
+
+            function show_result(score) {
+                var show_msg_content = ""
+                if (E_score > 15) {
+                    show_msg_content += "人格外向，可能是好交际，渴望刺激和冒险，情感易冲动。   "
+                } else if (E_score < 8) {
+                    show_msg_content += "人格内向，如好静，富于内省，不喜欢刺激，喜欢有秩序的生活方式，情绪比较稳定。   "
+                }
+                if (N_score > 14) {
+                    show_msg_content += "焦虑、忧心忡忡、常郁郁不乐，有强烈情绪反应，甚至出现不够理智的行为。   "
+                } else if (N_score < 9) {
+                    show_msg_content += "情绪稳定。   "
+                }
+                if (P_score > 8) {
+                    show_msg_content += "可能孤独、不关心他人，难以适应外部环境，不近人情，与别人不友好，喜欢寻衅搅扰，喜欢干奇特的事情，并且不顾危险。   "
+                }
+                if (L_score > 18) {
+                    show_msg_content += "有掩饰倾向，测试结果可能失真。   "
+                }
+                layer.alert(show_msg_content)
+            }
+
+            function send_result(){
+                $.ajax({
+                    url:"https://guohtgo.asuscomm.com:8002/online/epq_test",
+                    type:"get",
+                    data:{
+                        "E": E_score,
+                        "N": N_score,
+                        "P": P_score,
+                        "L": L_score,
+                        "total": score_rough
+                    },
+                    dataType:"json",
+                }).done(function(msg){
+                    if(msg.code==200){
+                        ;
+                    }else{
+                        console.log(msg.msg)
+                    }
+                }).fail(function(e){
+                    console.log(e);
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="scroll_progress_bar" class="scroll_progress_bar"></div>
+    <div class="main">
+        <h1>EPQ人格测试</h1>
+        <table class="layui-table">
+            <colgroup>
+                <col width="40px">
+                <col width="60%">
+                <col width="100px">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>题号</th>
+                    <th>问题</th>
+                    <th>选项</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr class="tr">
+                    <td>1</td>
+                    <td>你是否有广泛的爱好?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>2</td>
+                    <td>在做任何事情之前，你是否都要考虑一番</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>3</td>
+                    <td>你的情绪时常波动吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>4</td>
+                    <td>当别人做了好事，而周围的人认为是你做的时候，你是否感到洋洋得意?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>5</td>
+                    <td>你是一个健谈的人吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>6</td>
+                    <td>你曾经无缘无故地觉得自己“可怜”吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>7</td>
+                    <td>你曾经有过贪心使自己多得份外的物质利益吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>8</td>
+                    <td>晚上你是否小心地把门锁好?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>9</td>
+                    <td>你认为自己活泼吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>10</td>
+                    <td>当你看到小孩（或动物）受折磨时是否感到难受？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title=" 
+                是" class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>11</td>
+                    <td>你是否常担心你会说出(或做出)不应该说或做的事
+                        ？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>12</td>
+                    <td>若你说过要做某件事，是否不
+                        管遇到什么困难都要把他做成？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>13</td>
+                    <td>
+                        在愉快的聚会中你是否通常尽情享受?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>14</td>
+                    <td>你是一位易激怒的人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>15</td>
+                    <td>你
+                        是否有过自己做错了事反倒责备别人的时候？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>16</td>
+                    <td>你喜欢会见陌生人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>17</td>
+                    <td>你是否相信参加储蓄是一种好办法？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>18</td>
+                    <td>你的感情是否容易受到伤害？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>19</td>
+                    <td>你是否服用有奇特效果或是有危险性的药物</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>20</td>
+                    <td>你是否时常感到“极其厌烦”？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>21</td>
+                    <td>你曾多占多得别人的东西（甚至一针一线）吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>22</td>
+                    <td>如果条件允许，你喜欢经常外出（旅行）吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>23</td>
+                    <td>对你所喜欢的人，你是否为取乐开过过头的玩笑？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>24</td>
+                    <td>你是否常因“自罪感”而烦恼？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>25</td>
+                    <td>你是否有时候谈论一些你毫无所知的事情？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>26</td>
+                    <td>你是否宁愿看些书，而不想去会见别人？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>27</td>
+                    <td>有坏人想要害你吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title=" 
+                是" class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>28</td>
+                    <td>你认为自己“神经过敏”吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>29</td>
+                    <td>你的朋友多吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>30</td>
+                    <td>你是一个忧虑重重的人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>31</td>
+                    <td>你在儿童时代是否立即听从大人的吩咐而毫无怨言？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>32</td>
+                    <td>你是一个无忧无虑逍遥自在的人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>33</td>
+                    <td>有礼貌爱整洁对你很重要吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>34</td>
+                    <td>你是否担心将会发生可怕的事情？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>35</td>
+                    <td>在结实新朋友时，你通常是主动的吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是
+                " class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>36</td>
+                    <td>你觉得自己是个非常敏感的人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title=" 
+                是" class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>37</td>
+                    <td>和别人在一起的时候，你是否不常说话？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>38</td>
+                    <td>你是否认为结婚是个框框，应该废除？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>39</td>
+                    <td>你有时有点自吹自擂吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>40</td>
+                    <td>在一个沉闷的场合，你能给大家增添生气吗
+                        ？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>41</td>
+                    <td>慢腾腾开车的司机是否使你讨
+                        厌？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>42</td>
+                    <td>你担心自己的健康吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>43</td>
+                    <td>你是否喜欢说笑话和谈论有趣的事情?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>44</td>
+                    <td>你是否觉得大多数事情对你都是无所谓的?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否
+                " class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>45</td>
+                    <td>你小时候有过对父母鲁养
+                        无礼的行为吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>46</td>
+                    <td>你喜欢和别人打
+                        成一片，整天相处在一起吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>47</td>
+                    <td>你
+                        失眠吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title=" 
+                否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>48</td>
+                    <td>你饭前必定先洗手吗？
+                    </td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>49</td>
+                    <td>当别人问你话时，你是否对答如
+                        流?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>50</td>
+                    <td>你是否宁愿有富裕时间喜欢早
+                        点动身去赴约会？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>51</td>
+                    <td>你经常无缘无
+                        故感到疲倦和无精打采吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>52</td>
+                    <td>在游
+                        戏或打牌时你曾经作弊吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>53</td>
+                    <td>你喜欢
+                        紧张的工作吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>54</td>
+                    <td>你时常觉得自己的
+                        生活很单调吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>55</td>
+                    <td>你曾经为了自己而
+                        利用过别人吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>56</td>
+                    <td>你是否参加的活动
+                        太多，已超过自己可能分配的时间？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>57</td>
+                    <td>是否有那么几个人时常躲着你?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>58</td>
+                    <td>你是否认为人们为保障自己的将来而精打细算、勤俭节约所费的时间太多了?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>59</td>
+                    <td>你是否曾想过去死?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>60</td>
+                    <td>若你确知不会被发现时，你会少付给人家钱吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>61</td>
+                    <td>你能使一个联欢会开得成功吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>62</td>
+                    <td>你是否尽力使自己不粗鲁?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>63</td>
+                    <td>一件使你为难的事情过去之后，是否使你烦恼好久?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>64</td>
+                    <td>你曾否坚持要照你的想法去办事?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>65</td>
+                    <td>当你去乘火车时，你是否最后一分钟到达？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>66</td>
+                    <td>你是否容易紧张?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>67</td>
+                    <td>你常感到寂寞吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>68</td>
+                    <td>你的言行总是一致吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>69</td>
+                    <td>你有时喜欢玩弄动物吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>70</td>
+                    <td>有人对你或你的工作吹毛求疵时，是否容易伤害你的积极性?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>71</td>
+                    <td>你去赴约会或上班时，曾否迟到?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>72</td>
+                    <td>你是否喜欢在你的周围有许多热闹和高兴的事？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>73</td>
+                    <td>你愿意让别人怕你吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>74</td>
+                    <td>你是否有时兴致勃勃，有时却很懒散不想动弹？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>75</td>
+                    <td>你有时会把今天应该做的事拖到明天吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>76</td>
+                    <td>别人是否认为你是生气勃勃的?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>77</td>
+                    <td>别人是否对你说过许多慌话?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>78</td>
+                    <td>你是否对有些事情易性急生气?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title=" 
+                是" class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>79</td>
+                    <td>若你犯有错误你是否愿意承认?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是
+                " class="choice-yes"><input type="radio" name="if" value="n" title="否" class="choice-no"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>80</td>
+                    <td>你是一个整洁严谨、有条不紊的人吗?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>81</td>
+                    <td>在公园里或马路上，你是否总是把果皮或废纸扔
+                        到垃圾箱里?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>82</td>
+                    <td>遇到为难的事情你是
+                        否拿不定主意?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>83</td>
+                    <td>你是否有过随口骂
+                        人的时候?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>84</td>
+                    <td>若你乘车或坐飞机外出
+                        时，你是否担心会碰撞或出意外?</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>85</td>
+                    <td>你是一个爱交往的人吗？</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item"><input type="radio" name="if" value="y" title="是"
+                                    class="choice-yes"><input type="radio" name="if" value="n" title="否"
+                                    class="choice-no">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="btn-box">
+            <button class="layui-btn" id="submit">提交</button>
+        </div>
+    </div>
+</body>
+</html>

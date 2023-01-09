@@ -9,7 +9,7 @@ $(function () {
     var page = params.get('p') ? params.get('p') : 1; // list
 
     // 获取页面信息并显示
-    function ajax_get_tools_in_page(to_page) {
+    function ajax_get_tools_in_page(to_page, page_size) {
         $.ajax({
             type: "get",
             url: app_root + 'get_tools',
@@ -17,6 +17,7 @@ $(function () {
             data: {
                 // "csrfmiddlewaretoken": get_csrf_token(),
                 "group": to_page,
+                "page_size": page_size,
             },
             headers: {
                 "X-CSRFToken": get_csrf_token(),
@@ -58,6 +59,7 @@ $(function () {
                         elem: 'page-nav' //注意，这里的 test1 是 ID，不用加 # 号
                         , count: total_count //数据总数，从服务端得到
                         , limit: data.limit
+                        , limits: [12,24,36,48]
                         , curr: page_cur
                         , jump: function (obj, first) {
                             //obj包含了当前分页的所有参数，比如：
@@ -67,10 +69,10 @@ $(function () {
                             if (!first) {
                                 //do something
                                 history.pushState({}, null, location.origin + location.pathname +"?p=" +obj.curr);
-                                ajax_get_tools_in_page(obj.curr);
+                                ajax_get_tools_in_page(obj.curr, obj.limit);
                             }
                         },
-                        layout: ['prev', 'page', 'next', 'count'],
+                        layout: ['prev', 'page', 'next', 'count', "limit"],
                     });
                 })
             })
@@ -81,7 +83,7 @@ $(function () {
     }
 
     // 调用后，直接获取第一页
-    ajax_get_tools_in_page(page);
+    ajax_get_tools_in_page(page, 12);
 
 
 })

@@ -1,0 +1,1600 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolsBox package &#8212; MyTools 3.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="toolsbox-package">
+<h1>ToolsBox package<a class="headerlink" href="#toolsbox-package" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ToolsBox.migrations.html">ToolsBox.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolsBox.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolsBox.migrations.html#module-ToolsBox.migrations.0001_initial">ToolsBox.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolsBox.migrations.html#module-ToolsBox.migrations.0002_auto_20220630_0801">ToolsBox.migrations.0002_auto_20220630_0801 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolsBox.migrations.html#module-ToolsBox.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-ToolsBox.admin">
+<span id="toolsbox-admin-module"></span><h2>ToolsBox.admin module<a class="headerlink" href="#module-ToolsBox.admin" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">DownloadHistoryAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#DownloadHistoryAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">DownloadHistoryAdmin.delete&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#DownloadHistoryAdmin.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'download_history',</span> <span class="pre">'download_time']</span></em><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'download_history']</span></em><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.DownloadHistoryAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'download_history']</span></em><a class="headerlink" href="#ToolsBox.admin.DownloadHistoryAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">EmailVerifyAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#EmailVerifyAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>邮箱验证管理</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">EmailVerifyAdmin.delete&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.actions_on_top">
+<span class="sig-name descname"><span class="pre">actions_on_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.actions_on_top" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#EmailVerifyAdmin.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['email_addr',</span> <span class="pre">'verify_code',</span> <span class="pre">'send_time']</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['email_addr',</span> <span class="pre">'verify_code']</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.EmailVerifyAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['email_addr',</span> <span class="pre">'verify_code']</span></em><a class="headerlink" href="#ToolsBox.admin.EmailVerifyAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">HistoryAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#HistoryAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>历史记录管理</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">HistoryAdmin.delete&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#HistoryAdmin.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'browse_history',</span> <span class="pre">'browse_time',</span> <span class="pre">'ip_addr']</span></em><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'browse_history']</span></em><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.HistoryAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user__user_name',</span> <span class="pre">'browse_history__tool_name',</span> <span class="pre">'ip_addr']</span></em><a class="headerlink" href="#ToolsBox.admin.HistoryAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">SupportMeAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#SupportMeAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'user',</span> <span class="pre">'pay_amount',</span> <span class="pre">'order_id',</span> <span class="pre">'create_time',</span> <span class="pre">'pay_time',</span> <span class="pre">'pay_finish',</span> <span class="pre">'ip_addr']</span></em><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'pay_amount',</span> <span class="pre">'order_id']</span></em><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['pay_finish']</span></em><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.SupportMeAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'pay_amount',</span> <span class="pre">'order_id']</span></em><a class="headerlink" href="#ToolsBox.admin.SupportMeAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">ToolCommentAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolCommentAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>评论信息管理</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">ToolCommentAdmin.delete&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolCommentAdmin.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'tool',</span> <span class="pre">'summary',</span> <span class="pre">'good',</span> <span class="pre">'comment_time']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'tool',</span> <span class="pre">'summary',</span> <span class="pre">'good']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolCommentAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user__user_name',</span> <span class="pre">'tool__tool_name',</span> <span class="pre">'comment_content']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolCommentAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">ToolsAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolsAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>工具模型管理</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">ToolsAdmin.set_tools_passed&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">ToolsAdmin.set_tools_failed&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">ToolsAdmin.set_watch_zero&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">ToolsAdmin.set_download_zero&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'tool_name',</span> <span class="pre">'summary',</span> <span class="pre">'tool_upload_user',</span> <span class="pre">'tool_watch',</span> <span class="pre">'tool_download',</span> <span class="pre">'tool_img',</span> <span class="pre">'tool_create_time',</span> <span class="pre">'tool_upload_time',</span> <span class="pre">'is_checked']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'tool_name',</span> <span class="pre">'summary']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['tool_is_checked']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['tool_name',</span> <span class="pre">'tool_describe',</span> <span class="pre">'tool_upload_user__user_name']</span></em><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.set_download_zero">
+<span class="sig-name descname"><span class="pre">set_download_zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolsAdmin.set_download_zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.set_download_zero" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.set_tools_failed">
+<span class="sig-name descname"><span class="pre">set_tools_failed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolsAdmin.set_tools_failed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.set_tools_failed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.set_tools_passed">
+<span class="sig-name descname"><span class="pre">set_tools_passed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolsAdmin.set_tools_passed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.set_tools_passed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.ToolsAdmin.set_watch_zero">
+<span class="sig-name descname"><span class="pre">set_watch_zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#ToolsAdmin.set_watch_zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.ToolsAdmin.set_watch_zero" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.admin.</span></span><span class="sig-name descname"><span class="pre">UserAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#UserAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.UserAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>用户信息管理</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">UserAdmin.delete&gt;]</span></em><a class="headerlink" href="#ToolsBox.admin.UserAdmin.actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/admin.html#UserAdmin.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.admin.UserAdmin.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'user_name',</span> <span class="pre">'user_email',</span> <span class="pre">'user_reg_time']</span></em><a class="headerlink" href="#ToolsBox.admin.UserAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'user_name',</span> <span class="pre">'user_email']</span></em><a class="headerlink" href="#ToolsBox.admin.UserAdmin.list_display_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#ToolsBox.admin.UserAdmin.list_per_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#ToolsBox.admin.UserAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.admin.UserAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'user_name',</span> <span class="pre">'user_email']</span></em><a class="headerlink" href="#ToolsBox.admin.UserAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.apps">
+<span id="toolsbox-apps-module"></span><h2>ToolsBox.apps module<a class="headerlink" href="#module-ToolsBox.apps" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.apps.ToolsboxConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.apps.</span></span><span class="sig-name descname"><span class="pre">ToolsboxConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/apps.html#ToolsboxConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.apps.ToolsboxConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.apps.ToolsboxConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ToolsBox'</span></em><a class="headerlink" href="#ToolsBox.apps.ToolsboxConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.middleware">
+<span id="toolsbox-middleware-module"></span><h2>ToolsBox.middleware module<a class="headerlink" href="#module-ToolsBox.middleware" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.middleware.IpBan">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.middleware.</span></span><span class="sig-name descname"><span class="pre">IpBan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">get_response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/middleware.html#IpBan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.middleware.IpBan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MiddlewareMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.middleware.IpBan.process_request">
+<span class="sig-name descname"><span class="pre">process_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/middleware.html#IpBan.process_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.middleware.IpBan.process_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.models">
+<span id="toolsbox-models-module"></span><h2>ToolsBox.models module<a class="headerlink" href="#module-ToolsBox.models" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">DownloadHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#DownloadHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.DownloadHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.download_history">
+<span class="sig-name descname"><span class="pre">download_history</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.download_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.download_history_id">
+<span class="sig-name descname"><span class="pre">download_history_id</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.download_history_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.download_time">
+<span class="sig-name descname"><span class="pre">download_time</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.download_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.get_next_by_download_time">
+<span class="sig-name descname"><span class="pre">get_next_by_download_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">download_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.get_next_by_download_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.get_previous_by_download_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_download_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">download_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.get_previous_by_download_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.DownloadHistory.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.DownloadHistory.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#ToolsBox.models.DownloadHistory.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">EmailVerify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">send_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#EmailVerify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.EmailVerify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.email_addr">
+<span class="sig-name descname"><span class="pre">email_addr</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.email_addr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.get_next_by_send_time">
+<span class="sig-name descname"><span class="pre">get_next_by_send_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">send_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.EmailVerify.get_next_by_send_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.get_previous_by_send_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_send_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">send_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.EmailVerify.get_previous_by_send_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.EmailVerify.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.send_time">
+<span class="sig-name descname"><span class="pre">send_time</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.send_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.EmailVerify.verify_code">
+<span class="sig-name descname"><span class="pre">verify_code</span></span><a class="headerlink" href="#ToolsBox.models.EmailVerify.verify_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.History">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">History</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">browse_history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">browse_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#History"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.History" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.History.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.History.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.History.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.History.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.browse_history">
+<span class="sig-name descname"><span class="pre">browse_history</span></span><a class="headerlink" href="#ToolsBox.models.History.browse_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.browse_history_id">
+<span class="sig-name descname"><span class="pre">browse_history_id</span></span><a class="headerlink" href="#ToolsBox.models.History.browse_history_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.browse_time">
+<span class="sig-name descname"><span class="pre">browse_time</span></span><a class="headerlink" href="#ToolsBox.models.History.browse_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.History.get_next_by_browse_time">
+<span class="sig-name descname"><span class="pre">get_next_by_browse_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">browse_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.History.get_next_by_browse_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.History.get_previous_by_browse_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_browse_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">browse_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.History.get_previous_by_browse_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.History.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.ip_addr">
+<span class="sig-name descname"><span class="pre">ip_addr</span></span><a class="headerlink" href="#ToolsBox.models.History.ip_addr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.History.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#ToolsBox.models.History.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.History.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#ToolsBox.models.History.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">SupportMe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pay_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pay_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pay_finish</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#SupportMe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.SupportMe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.create_time">
+<span class="sig-name descname"><span class="pre">create_time</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.create_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.get_next_by_create_time">
+<span class="sig-name descname"><span class="pre">get_next_by_create_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">create_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.SupportMe.get_next_by_create_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.get_previous_by_create_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_create_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">create_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.SupportMe.get_previous_by_create_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.ip_addr">
+<span class="sig-name descname"><span class="pre">ip_addr</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.ip_addr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.SupportMe.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.order_id">
+<span class="sig-name descname"><span class="pre">order_id</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.pay_amount">
+<span class="sig-name descname"><span class="pre">pay_amount</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.pay_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.pay_finish">
+<span class="sig-name descname"><span class="pre">pay_finish</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.pay_finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.pay_time">
+<span class="sig-name descname"><span class="pre">pay_time</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.pay_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.SupportMe.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#ToolsBox.models.SupportMe.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">Tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_describe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_icon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_watch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_download</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_upload_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_upload_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_create_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_is_checked</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#Tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.Tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.Tool.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.Tool.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.downloadhistory_set">
+<span class="sig-name descname"><span class="pre">downloadhistory_set</span></span><a class="headerlink" href="#ToolsBox.models.Tool.downloadhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.get_next_by_tool_create_time">
+<span class="sig-name descname"><span class="pre">get_next_by_tool_create_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tool_create_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.Tool.get_next_by_tool_create_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.get_next_by_tool_upload_time">
+<span class="sig-name descname"><span class="pre">get_next_by_tool_upload_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tool_upload_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.Tool.get_next_by_tool_upload_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.get_previous_by_tool_create_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_tool_create_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tool_create_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.Tool.get_previous_by_tool_create_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.get_previous_by_tool_upload_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_tool_upload_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tool_upload_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.Tool.get_previous_by_tool_upload_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.history_set">
+<span class="sig-name descname"><span class="pre">history_set</span></span><a class="headerlink" href="#ToolsBox.models.Tool.history_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.Tool.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.is_checked">
+<span class="sig-name descname"><span class="pre">is_checked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#Tool.is_checked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.Tool.is_checked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.Tool.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#Tool.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.Tool.summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_create_time">
+<span class="sig-name descname"><span class="pre">tool_create_time</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_create_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_describe">
+<span class="sig-name descname"><span class="pre">tool_describe</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_describe" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_download">
+<span class="sig-name descname"><span class="pre">tool_download</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_download" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_file">
+<span class="sig-name descname"><span class="pre">tool_file</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>The descriptor for the file attribute on the model instance. Return a
+FieldFile when accessed so you can write code like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">myapp.models</span> <span class="k">import</span> <span class="n">MyModel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instance</span> <span class="o">=</span> <span class="n">MyModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instance</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+<p>Assign a file object on assignment so you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/hello.world&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">instance</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_icon">
+<span class="sig-name descname"><span class="pre">tool_icon</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just like the FileDescriptor, but for ImageFields. The only difference is
+assigning the width/height to the width_field/height_field, if appropriate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_img">
+<span class="sig-name descname"><span class="pre">tool_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#Tool.tool_img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.Tool.tool_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_is_checked">
+<span class="sig-name descname"><span class="pre">tool_is_checked</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_is_checked" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_name">
+<span class="sig-name descname"><span class="pre">tool_name</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_upload_time">
+<span class="sig-name descname"><span class="pre">tool_upload_time</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_upload_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_upload_user">
+<span class="sig-name descname"><span class="pre">tool_upload_user</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_upload_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_upload_user_id">
+<span class="sig-name descname"><span class="pre">tool_upload_user_id</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_upload_user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.tool_watch">
+<span class="sig-name descname"><span class="pre">tool_watch</span></span><a class="headerlink" href="#ToolsBox.models.Tool.tool_watch" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.Tool.toolcomment_set">
+<span class="sig-name descname"><span class="pre">toolcomment_set</span></span><a class="headerlink" href="#ToolsBox.models.Tool.toolcomment_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">ToolComment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">good</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#ToolComment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.ToolComment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.comment_content">
+<span class="sig-name descname"><span class="pre">comment_content</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.comment_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.comment_time">
+<span class="sig-name descname"><span class="pre">comment_time</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.comment_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.get_next_by_comment_time">
+<span class="sig-name descname"><span class="pre">get_next_by_comment_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">comment_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.ToolComment.get_next_by_comment_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.get_previous_by_comment_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_comment_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">comment_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.ToolComment.get_previous_by_comment_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.good">
+<span class="sig-name descname"><span class="pre">good</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.good" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.ToolComment.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#ToolComment.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.ToolComment.summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.tool">
+<span class="sig-name descname"><span class="pre">tool</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.tool_id">
+<span class="sig-name descname"><span class="pre">tool_id</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.tool_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.ToolComment.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#ToolsBox.models.ToolComment.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.models.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_real_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_reg_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.User.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ToolsBox.models.User.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ToolsBox.models.User.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ToolsBox.models.User.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.downloadhistory_set">
+<span class="sig-name descname"><span class="pre">downloadhistory_set</span></span><a class="headerlink" href="#ToolsBox.models.User.downloadhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.User.get_next_by_user_reg_time">
+<span class="sig-name descname"><span class="pre">get_next_by_user_reg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">user_reg_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.User.get_next_by_user_reg_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.User.get_previous_by_user_reg_time">
+<span class="sig-name descname"><span class="pre">get_previous_by_user_reg_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">user_reg_time&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ToolsBox.models.User.get_previous_by_user_reg_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.history_set">
+<span class="sig-name descname"><span class="pre">history_set</span></span><a class="headerlink" href="#ToolsBox.models.User.history_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ToolsBox.models.User.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ToolsBox.models.User.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.models.User.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/models.html#User.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.models.User.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.supportme_set">
+<span class="sig-name descname"><span class="pre">supportme_set</span></span><a class="headerlink" href="#ToolsBox.models.User.supportme_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.tool_set">
+<span class="sig-name descname"><span class="pre">tool_set</span></span><a class="headerlink" href="#ToolsBox.models.User.tool_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.toolcomment_set">
+<span class="sig-name descname"><span class="pre">toolcomment_set</span></span><a class="headerlink" href="#ToolsBox.models.User.toolcomment_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.user_email">
+<span class="sig-name descname"><span class="pre">user_email</span></span><a class="headerlink" href="#ToolsBox.models.User.user_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.user_name">
+<span class="sig-name descname"><span class="pre">user_name</span></span><a class="headerlink" href="#ToolsBox.models.User.user_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.user_password">
+<span class="sig-name descname"><span class="pre">user_password</span></span><a class="headerlink" href="#ToolsBox.models.User.user_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.user_real_name">
+<span class="sig-name descname"><span class="pre">user_real_name</span></span><a class="headerlink" href="#ToolsBox.models.User.user_real_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.user_reg_time">
+<span class="sig-name descname"><span class="pre">user_reg_time</span></span><a class="headerlink" href="#ToolsBox.models.User.user_reg_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.models.User.userresume_set">
+<span class="sig-name descname"><span class="pre">userresume_set</span></span><a class="headerlink" href="#ToolsBox.models.User.userresume_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.tests">
+<span id="toolsbox-tests-module"></span><h2>ToolsBox.tests module<a class="headerlink" href="#module-ToolsBox.tests" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-ToolsBox.urls">
+<span id="toolsbox-urls-module"></span><h2>ToolsBox.urls module<a class="headerlink" href="#module-ToolsBox.urls" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-ToolsBox.views">
+<span id="toolsbox-views-module"></span><h2>ToolsBox.views module<a class="headerlink" href="#module-ToolsBox.views" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.views.MyAliPay">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">MyAliPay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#MyAliPay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.MyAliPay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ToolsBox.views.MyAliPay.get_trade_url">
+<span class="sig-name descname"><span class="pre">get_trade_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#MyAliPay.get_trade_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.MyAliPay.get_trade_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.ban">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">ban</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#ban"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.ban" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.ban_ip">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">ban_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#ban_ip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.ban_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.cal">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">cal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#cal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.cal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.change_pwd">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">change_pwd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#change_pwd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.change_pwd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.ckeditor_img">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">ckeditor_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#ckeditor_img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.ckeditor_img" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.cmd">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.cmd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.cmd_run">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">cmd_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#cmd_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.cmd_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.comments_good">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">comments_good</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#comments_good"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.comments_good" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.create_verify_code">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">create_verify_code</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#create_verify_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.create_verify_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.download">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#download"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.email_check">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">email_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#email_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.email_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.email_check_change_pwd">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">email_check_change_pwd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#email_check_change_pwd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.email_check_change_pwd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.file_iterator">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">file_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8192</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#file_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.file_iterator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.forget_pwd">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">forget_pwd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#forget_pwd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.forget_pwd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_browser_history">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_browser_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_browser_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_browser_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_comments">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_comments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_comments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_csrf_token">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_csrf_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_csrf_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_csrf_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_download_history">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_download_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_download_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_download_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_ip">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_ip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_name_status">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_name_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_name_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_name_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_personal_info">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_personal_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_personal_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_personal_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_search_tool">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_search_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_search_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_search_tool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_status">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_tool_info">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_tool_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_tool_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_tool_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_tools">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_tools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_tools"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_tools" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_top_ten">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_top_ten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_top_ten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_top_ten" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.get_upload_history">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">get_upload_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#get_upload_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.get_upload_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.go_out">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">go_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#go_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.go_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.index">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.is_Chinese">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">is_Chinese</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#is_Chinese"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.is_Chinese" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.login">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.login_ajax">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">login_ajax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#login_ajax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.login_ajax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.login_required">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">login_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view_func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#login_required"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.login_required" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.logout">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#logout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.logout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.love">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">love</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#love"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.love" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.notify">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#notify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.notify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.open_alipay_public_key">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">open_alipay_public_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#open_alipay_public_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.open_alipay_public_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.open_my_private_key">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">open_my_private_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#open_my_private_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.open_my_private_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.paceCal">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">paceCal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#paceCal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.paceCal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.personal">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">personal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#personal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.personal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.put_order">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">put_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#put_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.put_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.reg_ajax">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">reg_ajax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#reg_ajax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.reg_ajax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.register">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.resume">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#resume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.resume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.resume2">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">resume2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#resume2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.resume2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.root_index">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">root_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#root_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.root_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.save_file">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#save_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.save_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.save_icon">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">save_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#save_icon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.save_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.search_tool">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">search_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#search_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.search_tool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.status">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.stream_video">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">stream_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#stream_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.stream_video" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.submit_comment">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">submit_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#submit_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.submit_comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.timer">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#timer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.timer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.tool_detail">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">tool_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#tool_detail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.tool_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.upload">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#upload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.upload_ajax">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">upload_ajax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#upload_ajax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.upload_ajax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ToolsBox.views.video_show">
+<span class="sig-prename descclassname"><span class="pre">ToolsBox.views.</span></span><span class="sig-name descname"><span class="pre">video_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">view_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/views.html#video_show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.views.video_show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ToolsBox" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MyTools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, GuoHT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/ToolsBox/ToolsBox.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolsBox.models &#8212; MyTools 3.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for ToolsBox.models</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">ckeditor.fields</span> <span class="k">import</span> <span class="n">RichTextField</span>
+<span class="kn">from</span> <span class="nn">ckeditor_uploader.fields</span> <span class="k">import</span> <span class="n">RichTextUploadingField</span>
+<span class="kn">from</span> <span class="nn">django.utils.html</span> <span class="k">import</span> <span class="n">format_html</span>
+<span class="kn">from</span> <span class="nn">MyTools</span> <span class="k">import</span> <span class="n">settings</span>
+<span class="c1">#from fernet_fields import EncryptedCharField, EncryptedEmailField</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.hashers</span> <span class="k">import</span> <span class="n">make_password</span>
+
+
+<span class="c1"># Create your models here.</span>
+<div class="viewcode-block" id="User"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.User">[docs]</a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># user_id = models.AutoField()  # 自动添加</span>
+    <span class="n">user_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;用户名&quot;</span><span class="p">)</span>  <span class="c1"># 用户名</span>
+    <span class="n">user_real_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;真实姓名&quot;</span><span class="p">)</span>  <span class="c1"># 真实姓名</span>
+    <span class="n">user_password</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;密码&quot;</span><span class="p">)</span>  <span class="c1"># 密码</span>
+    <span class="n">user_email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;邮箱&quot;</span><span class="p">)</span>
+    <span class="n">user_reg_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;注册时间&quot;</span><span class="p">)</span>  <span class="c1"># 注册时间</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;user_info&quot;</span>  <span class="c1"># 表名</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;用户&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;用户&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_name</span>
+
+<div class="viewcode-block" id="User.save"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.User.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_password</span> <span class="o">=</span> <span class="n">make_password</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_password</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;pbkdf2_sha256&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Tool"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.Tool">[docs]</a><span class="k">class</span> <span class="nc">Tool</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># tool_id = models.AutoField()</span>
+    <span class="n">tool_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;工具名称&quot;</span><span class="p">)</span>  <span class="c1"># 工具名称</span>
+    <span class="c1"># tool_describe = RichTextField(verbose_name=&quot;介绍&quot;)  # 工具介绍，富文本编辑器(不能传图)</span>
+    <span class="n">tool_describe</span> <span class="o">=</span> <span class="n">RichTextUploadingField</span><span class="p">(</span><span class="n">config_name</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;介绍&quot;</span><span class="p">)</span>  <span class="c1"># 工具介绍，富文本编辑器(可以上传图片)，有bug</span>
+    <span class="n">tool_file</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FileField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s2">&quot;Files/&quot;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;文件路径&quot;</span><span class="p">)</span>  <span class="c1"># 工具图标</span>
+    <span class="n">tool_icon</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s2">&quot;Icons/&quot;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;图标路径&quot;</span><span class="p">)</span>  <span class="c1"># 文件</span>
+    <span class="n">tool_watch</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;浏览量&quot;</span><span class="p">)</span>  <span class="c1"># 浏览量</span>
+    <span class="n">tool_download</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;下载量&quot;</span><span class="p">)</span>  <span class="c1"># 下载量</span>
+    <span class="n">tool_upload_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;更新时间&quot;</span><span class="p">)</span>  <span class="c1"># 更改时间</span>
+    <span class="n">tool_upload_user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">,</span>
+                                         <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;上传用户&quot;</span><span class="p">)</span>  <span class="c1"># 上传用户</span>
+    <span class="n">tool_create_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;创建时间&quot;</span><span class="p">)</span>  <span class="c1"># 创建时间</span>
+    <span class="n">tool_is_checked</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;是否通过审核&quot;</span><span class="p">)</span>  <span class="c1"># 管理员是否审核</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;tool_info&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;工具&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;工具&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_name</span>
+
+<div class="viewcode-block" id="Tool.is_checked"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.Tool.is_checked">[docs]</a>    <span class="k">def</span> <span class="nf">is_checked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_is_checked</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;√&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;X&quot;</span></div>
+
+    <span class="n">is_checked</span><span class="o">.</span><span class="n">admin_order_field</span> <span class="o">=</span> <span class="s2">&quot;tool_is_checked&quot;</span>  <span class="c1"># 通过tool_is_checked排序</span>
+    <span class="n">is_checked</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s2">&quot;是否通过审核&quot;</span>
+
+<div class="viewcode-block" id="Tool.tool_img"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.Tool.tool_img">[docs]</a>    <span class="k">def</span> <span class="nf">tool_img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">format_html</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;</span><span class="si">{}{}</span><span class="s1">&quot; alt=&quot;&quot; width=&quot;24&quot;/&gt;&#39;</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_icon</span><span class="p">)</span>  <span class="c1"># 在后台管理列表显示图标</span></div>
+    <span class="n">tool_img</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s2">&quot;图标&quot;</span>
+
+<div class="viewcode-block" id="Tool.summary"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.Tool.summary">[docs]</a>    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tool_describe</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_describe</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;...&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool_describe</span></div>
+
+    <span class="n">summary</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s2">&quot;简介&quot;</span></div>
+
+
+<div class="viewcode-block" id="EmailVerify"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.EmailVerify">[docs]</a><span class="k">class</span> <span class="nc">EmailVerify</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">email_addr</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;邮箱地址&quot;</span><span class="p">)</span>  <span class="c1"># 邮箱目的地址</span>
+    <span class="n">verify_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;验证码&quot;</span><span class="p">)</span>  <span class="c1"># 发送的验证码</span>
+    <span class="n">send_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;发送时间&quot;</span><span class="p">)</span>  <span class="c1"># 发送的时间</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;email_verify&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;邮箱验证&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;邮箱验证&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">email_addr</span></div>
+
+
+<div class="viewcode-block" id="History"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.History">[docs]</a><span class="k">class</span> <span class="nc">History</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;浏览用户&quot;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">browse_history</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;Tool&quot;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;浏览内容&quot;</span><span class="p">)</span>
+    <span class="n">browse_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;浏览时间&quot;</span><span class="p">)</span>
+    <span class="n">ip_addr</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;IP地址&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;browse_history&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;浏览历史&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;浏览历史&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">browse_history</span><span class="o">.</span><span class="n">tool_name</span></div>
+
+
+<div class="viewcode-block" id="ToolComment"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.ToolComment">[docs]</a><span class="k">class</span> <span class="nc">ToolComment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;评论用户&quot;</span><span class="p">)</span>
+    <span class="n">tool</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Tool</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;评论工具&quot;</span><span class="p">)</span>
+    <span class="n">comment_content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;评论内容&quot;</span><span class="p">)</span>
+    <span class="n">comment_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;发表时间&quot;</span><span class="p">)</span>
+    <span class="n">good</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;点赞量&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;tool_comment&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;评论&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;评论&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;...&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span>
+
+<div class="viewcode-block" id="ToolComment.summary"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.ToolComment.summary">[docs]</a>    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;...&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment_content</span></div>
+
+    <span class="n">summary</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s2">&quot;评论内容&quot;</span></div>
+
+
+<div class="viewcode-block" id="DownloadHistory"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.DownloadHistory">[docs]</a><span class="k">class</span> <span class="nc">DownloadHistory</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;下载用户&quot;</span><span class="p">)</span>
+    <span class="n">download_history</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;Tool&quot;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;下载内容&quot;</span><span class="p">)</span>
+    <span class="n">download_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;下载时间&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;download_history&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;下载历史&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;下载历史&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">download_history</span><span class="o">.</span><span class="n">tool_name</span></div>
+
+
+<div class="viewcode-block" id="SupportMe"><a class="viewcode-back" href="../../ToolsBox/ToolsBox.html#ToolsBox.models.SupportMe">[docs]</a><span class="k">class</span> <span class="nc">SupportMe</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;打赏用户&quot;</span><span class="p">)</span>
+    <span class="n">pay_amount</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;支付金额&quot;</span><span class="p">)</span>
+    <span class="n">create_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;下单时间&quot;</span><span class="p">)</span>
+    <span class="n">order_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;订单号&quot;</span><span class="p">)</span>
+    <span class="n">pay_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;支付时间&quot;</span><span class="p">)</span>
+    <span class="n">pay_finish</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;是否完成交易&quot;</span><span class="p">)</span>
+    <span class="n">ip_addr</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;IP地址&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;support_me&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;支付历史&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;支付历史&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_id</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">MyTools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, GuoHT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

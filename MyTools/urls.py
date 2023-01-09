@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls import include, url
 from django.views import static
-from django.conf import settings
+from django.conf.urls.static import static as static_
+# from django.conf import settings
 from django.views.generic.base import RedirectView
 
 from MyTools import settings
@@ -31,6 +32,8 @@ urlpatterns = [
 	url(r'^$', views.root_index),
     url(r'^favicon\.ico', RedirectView.as_view(url=r'/static/img/tools-icon.png')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^doc/$', static.serve, {'document_root': settings.DOCS_ROOT, "path": "index.html"}, name='doc'),
+    url(r'^doc/(?P<path>.*)$', static.serve, {'document_root': settings.DOCS_ROOT}, name='doc'),
 ]
 
 if settings.DEBUG is False:

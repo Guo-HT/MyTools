@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolsBox.migrations package &#8212; MyTools 3.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="toolsbox-migrations-package">
+<h1>ToolsBox.migrations package<a class="headerlink" href="#toolsbox-migrations-package" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-ToolsBox.migrations.0001_initial">
+<span id="toolsbox-migrations-0001-initial-module"></span><h2>ToolsBox.migrations.0001_initial module<a class="headerlink" href="#module-ToolsBox.migrations.0001_initial" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/migrations/0001_initial.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#ToolsBox.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#ToolsBox.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='DownloadHistory',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('download_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'下载历史',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'下载历史',</span> <span class="pre">'db_table':</span> <span class="pre">'download_history'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='EmailVerify',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('email_addr',</span> <span class="pre">&lt;django.db.models.fields.EmailField&gt;),</span> <span class="pre">('verify_code',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('send_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'邮箱验证',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'邮箱验证',</span> <span class="pre">'db_table':</span> <span class="pre">'email_verify'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='History',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('browse_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('ip_addr',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'浏览历史',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'浏览历史',</span> <span class="pre">'db_table':</span> <span class="pre">'browse_history'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='SupportMe',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('pay_amount',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('create_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('order_id',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('pay_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('pay_finish',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;),</span> <span class="pre">('ip_addr',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'支付历史',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'支付历史',</span> <span class="pre">'db_table':</span> <span class="pre">'support_me'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Tool',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('tool_name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('tool_describe',</span> <span class="pre">&lt;ckeditor_uploader.fields.RichTextUploadingField&gt;),</span> <span class="pre">('tool_file',</span> <span class="pre">&lt;django.db.models.fields.files.FileField&gt;),</span> <span class="pre">('tool_icon',</span> <span class="pre">&lt;django.db.models.fields.files.ImageField&gt;),</span> <span class="pre">('tool_watch',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('tool_download',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('tool_upload_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('tool_create_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('tool_is_checked',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'工具',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'工具',</span> <span class="pre">'db_table':</span> <span class="pre">'tool_info'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='ToolComment',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('comment_content',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('comment_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('good',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('tool',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'评论',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'评论',</span> <span class="pre">'db_table':</span> <span class="pre">'tool_comment'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='User',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('user_name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('user_age',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('user_password',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('user_email',</span> <span class="pre">&lt;django.db.models.fields.EmailField&gt;),</span> <span class="pre">('user_reg_time',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;)],</span> <span class="pre">options={'verbose_name':</span> <span class="pre">'用户',</span> <span class="pre">'verbose_name_plural':</span> <span class="pre">'用户',</span> <span class="pre">'db_table':</span> <span class="pre">'user_info'}&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='toolcomment',</span> <span class="pre">name='user',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='tool',</span> <span class="pre">name='tool_upload_user',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='supportme',</span> <span class="pre">name='user',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='history',</span> <span class="pre">name='browse_history',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='history',</span> <span class="pre">name='user',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='downloadhistory',</span> <span class="pre">name='download_history',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='downloadhistory',</span> <span class="pre">name='user',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#ToolsBox.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.migrations.0002_auto_20220630_0801">
+<span id="toolsbox-migrations-0002-auto-20220630-0801-module"></span><h2>ToolsBox.migrations.0002_auto_20220630_0801 module<a class="headerlink" href="#module-ToolsBox.migrations.0002_auto_20220630_0801" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0002_auto_20220630_0801.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ToolsBox.migrations.0002_auto_20220630_0801.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolsBox/migrations/0002_auto_20220630_0801.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ToolsBox.migrations.0002_auto_20220630_0801.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0002_auto_20220630_0801.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('ToolsBox',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#ToolsBox.migrations.0002_auto_20220630_0801.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ToolsBox.migrations.0002_auto_20220630_0801.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='user',</span> <span class="pre">name='user_age'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='user',</span> <span class="pre">name='user_real_name',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#ToolsBox.migrations.0002_auto_20220630_0801.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ToolsBox.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ToolsBox.migrations" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MyTools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, GuoHT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/ToolsBox/ToolsBox.migrations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

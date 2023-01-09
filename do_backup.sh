@@ -17,5 +17,5 @@ bak_file_name_ln=$backup_root_ln$datetime".sql"
 mysqldump -uroot -pGuoHT990520#2 ToolsBoxPi > $bak_file_name
 ln $bak_file_name $bak_file_name_ln
 
-find $backup_root -mtime +5 -name "*.sql" -exec rm -rf {} \;
-find $backup_root_ln -mtime +5 -name "*.sql" -exec rm -rf {} \;
+find $backup_root -mtime +12 -name "*.sql" -exec rm -rf {} \;
+find $backup_root_ln -mtime +12 -name "*.sql" -exec rm -rf {} \;
