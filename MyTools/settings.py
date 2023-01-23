@@ -14,6 +14,7 @@ import os
 # import pymysql
 # pymysql.install_as_MySQLdb()
 import MySQLdb
+from secret import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vq$-i=_cxndj7ukk85h@8yj$n!am&k*zg^4xa44c8&v-$0-kk5'
+SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False # True 
@@ -130,17 +131,17 @@ DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql', #设置为mysql数据库
         'NAME': 'ToolsBoxPi',  #mysql数据库名
-        'USER': 'root',  #mysql用户名
-        'PASSWORD': 'GuoHT990520#2',   #mysql密码
-        'HOST': '',  #留空默认为localhost
-        'PORT': '',  #留空默认为3306端口
+        'USER': mysql_user,  #mysql用户名
+        'PASSWORD': mysql_passwd,   #mysql密码
+        'HOST': mysql_ip,  #留空默认为localhost
+        'PORT': mysql_port,  #留空默认为3306端口
     }
 }
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://:guoht990520_2_redis@127.0.0.1:6379/0",
+        "LOCATION": f"redis://:{redis_passwd}@{redis_ip}:{redis_port}/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -198,8 +199,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # debug=False生效
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '2651156641@qq.com'
-EMAIL_HOST_PASSWORD = 'zmbxcfcbtdyweaif'
+EMAIL_HOST_USER = email_host_user
+EMAIL_HOST_PASSWORD = email_host_paswd
 EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
 
 # 获取csrf_token时需要的参数{"get_csrf_password":"i am guohtgo"}
@@ -208,12 +209,8 @@ get_csrf_password = 'i am guohtgo'
 ALIPAY_APP_ID = "2021000117676739"
 ALIPAY_RETURN_URL = "http://guohtgo.asuscomm.com:8001/tools/index"
 ALIPAY_NOTIFY_URL = "http://guohtgo.asuscomm.com:8001/tools/notify"
-# superuser:
-# 用户名:  16227
-# 电子邮件地址:  1622761893@qq.com
-# Password:  guoht990520
 
-AES_KEY = "guohtguoht990520"
+AES_KEY = aes_key
 
 DOCS_URL = '/doc/'  # url
 DOCS_ROOT = BASE_DIR +'/doc/build/html'   # 文档路径

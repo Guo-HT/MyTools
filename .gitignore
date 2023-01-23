@@ -7,3 +7,4 @@ Daily/*
 .ssh/*
 *.pyc
 */__pycache__/*
+secret.py

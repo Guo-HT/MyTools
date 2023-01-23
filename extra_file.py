@@ -3,6 +3,7 @@ from MyTools import settings
 from os import listdir
 import re
 from lxml import etree
+from secret import *
 
 
 # 递归地搜索所有文件
@@ -25,7 +26,7 @@ def search_file(file_list, path, file=''):
 
 
 def get_extra_file():
-    database_info = ['127.0.0.1', 'root', 'GuoHT990520#2', 'ToolsBoxPi']  # ip、用户名、密码、数据库名
+    database_info = [mysql_ip, mysql_user, mysql_passwd, 'ToolsBoxPi']  # ip、用户名、密码、数据库名
     try:
         # 链接数据库， 创建游标
         conn = pymysql.connect(database_info[0], database_info[1], database_info[2], database_info[3])
