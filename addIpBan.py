@@ -1,7 +1,7 @@
 import redis
 import sys
 import datetime
-from ip2loc import IpLocQuery
+from utils.ip2loc import IpLocQuery
 
 def main(ip_list):
     redis_con = redis.StrictRedis(host="localhost", port=6379, db=2)

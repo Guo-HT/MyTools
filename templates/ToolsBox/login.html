@@ -36,13 +36,25 @@
                     </div>
                     <div class="layui-form-mid layui-word-aux tip" id="tip-password"></div>
                 </div>
-                <!-- 滑块验证 start -->
+                <!-- 验证码 start -->
                 <div class="layui-form-item">
-                    <!-- <label class="layui-form-label">滑动验证</label> -->
-                    <div class="layui-input-block" style="display:block;">
-                        <div id="slider"></div>
+                    <label class="layui-form-label">验&nbsp;&nbsp;证&nbsp;&nbsp;码</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="verify_img_code" required lay-verify="required" placeholder="请输入验证码"
+                            autocomplete="off" class="layui-input" id="verify_img_input">
                     </div>
+                    <div class="layui-form-label" style="padding: 0; height: 38px; width: 114px; border: 1px solid #000;" id="login_verify_img_div">
+                        <img src="" height="100%" id="login_verify_img">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux tip" id="verify_img_tip"></div>
                 </div>
+                <!-- 滑块验证 start -->
+                <!-- <div class="layui-form-item"> -->
+                    <!-- <label class="layui-form-label">滑动验证</label> -->
+                    <!-- <div class="layui-input-block" style="display:block;"> -->
+                        <!-- <div id="slider"></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
                 <!-- 记住我 start -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">记住我</label>

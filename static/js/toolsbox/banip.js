@@ -4,21 +4,25 @@ $(function(){
         url:app_root+"ban_ip",
         type:"get",
         dataType:"json",
-     }).done(function(data){
+     }).done(function(msg){
         //console.log(data);
-        var ip = data["data"];
-        var ip_count = ip.length;
-        //console.log(ip);
-        var $content = $("#content");
-        var html_content = "";
-        for(var i=0; i<ip_count;i++){
-            //console.log(ip[i])
-            var time = ip[i][1].split("\t")[0];
-            var loc = ip[i][1].split("\t")[1];
-            //console.log(time, loc);
-            html_content+="<li><span class='ip'>"+ip[i][0]+"</span><span class='time'>"+time+"</span><span class='loc'>"+loc+"</span></li>"
+        if(msg.code==200){
+            var data = msg.data.ban_ip_list
+            var ip_count = data.length;
+            var $content = $("#content");
+            var html_content = "";
+            for(var i=0; i<ip_count;i++){
+                var ip = data[i].ip
+                var time = data[i].time;
+                var loc = data[i].loc;
+                //console.log(time, loc);
+                html_content+="<li><span class='ip'>"+ip+"</span><span class='time'>"+time+"</span><span class='loc'>"+loc+"</span></li>"
+            }
+            $content.html(html_content);
+        }else{
+            layer.msg(msg.msg)
         }
-        $content.html(html_content);
+        
      })
       .fail(function(e){
         })

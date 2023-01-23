@@ -8,8 +8,6 @@ redis_con = redis.StrictRedis(host="localhost",password="guoht990520_2_redis" ,p
 def get_ban_ip():
     # 获取redis中2号数据库的所有key
     ban_ip = redis_con.keys("*")
-
-    # print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     # print(f"共封禁{len(ban_ip)-1}个ip地址\n")
 
     ip_time = {}
@@ -26,10 +24,8 @@ def get_ban_ip():
     ban_all = []
     # 输出
     for each in ip_time:
-        # print("%4s\t%16s\t%s" % (ip_time.index(each), each[0], each[1]), end="\t")
-        # print()
-        ban_all.append((each[0], each[1]))
-    # print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        this_ban = {"ip": each[0], "time": each[1].split("\t")[0], "loc": each[1].split("\t")[1]}
+        ban_all.append(this_ban)
     return ban_all
 
 

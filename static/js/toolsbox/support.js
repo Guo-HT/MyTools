@@ -13,8 +13,13 @@ $(function(){
             headers:{
                 "X-CSRFToken": get_csrf_token(),
             }
-        }).done(function(data){
-            window.location.href = data.pay_url;
+        }).done(function(msg){
+            if(msg.code==200){
+                var data = msg.data
+                window.location.href = data.pay_url;
+            }else{
+                layer.msg(msg.msg)
+            }
 
         }).fail(function(){
 

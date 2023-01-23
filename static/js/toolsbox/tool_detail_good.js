@@ -9,9 +9,9 @@ $(function () {
         // alert($this_li.find("#user").text());
         // alert($this_li.find("#comment_date").text());
         $.ajax({
-            type: "get",
+            type: "post",
             url: app_root + 'comments_good',
-            dataType: "text",
+            dataType: "json",
             data: {
                 "user": $this_li.find("#user").text(),  // 点击元素统计的用户名
                 "from": tool_id,
@@ -21,8 +21,10 @@ $(function () {
                 "X-CSRFToken": get_csrf_token(),
             },
         }).done(function (msg) {
-            console.log("点赞成功!");
-            $this_li.find('#good_num').text(parseInt($this_li.find('#good_num').text())+1);  // 页面上的点赞数实时+1
+            // console.log("点赞成功!");
+            if(msg.code==200){
+                $this_li.find('#good_num').text(msg.data.good_num);  // 页面上的点赞数实时+1
+            }
             // alert("评论成功")
         })
             .fail(function () {

@@ -57,7 +57,7 @@ $(function () {
         $.ajax({
             type: 'get',
             url: app_root + 'email_check_change_pwd',
-            dataType: 'text',
+            dataType: 'json',
             data: {
                 // 'csrfmiddlewaretoken': csrf_token,
                 "user_email": $("#user-email").val(),
@@ -66,12 +66,12 @@ $(function () {
                 "X-CSRFToken": get_csrf_token(),
             },
         }).done(function (msg) {
-            console.log('验证中......');
-            if (msg === 'email_not_exist') {
-                layer.msg("邮箱未绑定，请确认重试。");
-                $("#user-email").val("");
-            } else if (msg === "error") {
-                layer.msg("邮件发送出现问题");
+            // console.log('验证中......');
+            if(msg.code==200){
+                layer.msg(msg.msg)
+            }else{
+                layer.msg(msg.msg)
+                clearInterval(timer_60s);
             }
         })
             .fail(function () {
@@ -85,7 +85,7 @@ $(function () {
         $.ajax({
             url: app_root + "change_pwd",
             type: "post",
-            dataType: "text",
+            dataType: "json",
             data: {
                 'email': $("#user-email").val(),
                 'verify': $("#user-verify").val(),
@@ -95,15 +95,11 @@ $(function () {
                 "X-CSRFToken": get_csrf_token(),
             },
         }).done(function (msg) {
-            if (msg === 'not_exist') {
-                layer.msg("邮箱没有绑定！");
-            } else if (msg === "failed") {
-                layer.msg("修改失败");
-            } else if (msg === "error") {
-                layer.msg("验证码错误！");
-            } else if (msg === "ok") {
+            if(msg.code==200){
                 layer.msg("修改成功，即将跳转");
                 window.location.href = "/tools/login";
+            }else{
+                layer.msg(msg.msg)
             }
         })
             .fail(function () {

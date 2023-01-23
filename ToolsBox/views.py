@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from MyTools import settings
 from ToolsBox.models import User, Tool, EmailVerify, History, ToolComment, DownloadHistory, SupportMe
 from django.db.models import Q
-from pc_or_mobile import judge_pc_or_mobile
+from utils.pc_or_mobile import judge_pc_or_mobile
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 from django.middleware.csrf import get_token
 from django.views import View
@@ -123,7 +123,6 @@ def get_csrf_token(request):
 # 获取用户名和登录状态
 @timer
 def get_name_status(requests):
-    import json
     try:
         user_name_cookie = requests.COOKIES['user_name']
     except KeyError:
@@ -134,8 +133,8 @@ def get_name_status(requests):
     else:
         is_login = False
         user_name = ''
-    return JsonResponse(
-        {"islogin": is_login, "user_name_sess": user_name, "user_name_cook": user_name_cookie}, safe=False)
+    data = {"islogin": is_login, "user_name_sess": user_name, "user_name_cook": user_name_cookie}
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 # 登录页面
@@ -196,12 +195,17 @@ def reg_ajax(requests):
             user_reg.user_email = user_email
             user_reg.save()
             #print("数据保存成功！")
-            return JsonResponse({"state": "OK"})
+            return JsonResponse({"code": 200, "msg": "注册成功", "data": {
+                "user_name":user_reg.user_name,
+                "real_name":user_reg.user_real_name,
+                "password":"******",
+                "email": user_reg.user_email,
+            }}, safe=False)
         else:
-            return JsonResponse({"state": "wrong or timeout"})
+            return JsonResponse({"code": 500, "msg": "验证码错误", "data": {}}, safe=False)
     else:
         #print("数据未保存")
-        return JsonResponse({"state": "name_exist"})
+        return JsonResponse({"code": 403, "msg": "用户已存在", "data": {}}, safe=False)
 
 
 
@@ -227,13 +231,13 @@ def email_check(requests):
             except Exception as e:
                 print(e)
             print("send_to:", email_dest, "   verify_code:", verify_code, "邮件发送成功，数据保存完成！")
-            return HttpResponse("ok")
+            return JsonResponse({"code": 200, "msg": "邮件发送成功！", "data": {}})
         else:
             print("出现问题，邮件状态码：", send_status)
-            return HttpResponse("error")
+            return JsonResponse({"code": 500, "msg": f"发送邮件发生错误：{send_status}", "data": {}}, safe=False)
     else:
         print('邮箱被使用，退回！')
-        return HttpResponse("email_exist")
+        return JsonResponse({"code": 403, "msg": "该邮箱已被使用", "data": {}}, safe=False)
 
 
 # 修改密码
@@ -249,7 +253,7 @@ def change_pwd(requests):
     try:
         cur_user = User.objects.get(user_email=email_addr)
     except Exception as e:
-        return HttpResponse("not_exist")
+        return JsonResponse({"code": 403, "msg": "不存在该用户", "data": {}}, safe=False)
     else:
         deadline = datetime.now() - timedelta(0, 60 * 5)
         verify_check = EmailVerify.objects.filter(email_addr=email_addr, verify_code=verify_code,
@@ -260,10 +264,10 @@ def change_pwd(requests):
                 cur_user.save()
             except Exception as e:
                 print("密码更改失败", e)
-                return HttpResponse("failed")
+                return JsonResponse({"code": 500, "msg": f"密码修改失败，{e}", "data": {}}, safe=False)
         else:
-            return HttpResponse("error")
-    return HttpResponse("ok")
+            return JsonResponse({"code": 403, "msg": "验证码错误", "data": {}}, safe=False)
+    return JsonResponse({"code": 200, "msg": "密码修改成功", "data": {}}, safe=False)
 
 
 # 修改密码邮箱验证
@@ -287,11 +291,12 @@ def email_check_change_pwd(requests):
             verify.save()
         except Exception as e:
             print(e)
+            return JsonResponse({"code": 500, "msg": f"发生错误：{e}", "data": {}}, safe=False)
         print("send_to:", email_dest, "   verify_code:", verify_code, "邮件发送成功，数据保存完成！")
-        return HttpResponse("ok")
+        return JsonResponse({"code": 200, "msg": "邮件发送成功", "data": {}}, safe=False)
     else:
         print("邮箱未绑定")
-        return HttpResponse("email_not_exist")
+        return JsonResponse({"code": 403, "msg": "邮箱未绑定", "data": {}}, safe=False)
 
 
 # 生成6位数字验证码
@@ -310,10 +315,16 @@ def create_verify_code():
 # 登录功能实现
 @timer
 def login_ajax(requests):
+    from utils.my_aes import AesEncrypt, AesDecrypt
+
     name = requests.POST.get("name")
     pwd = requests.POST.get("password")
     remember_me = requests.POST.get("is_remember")
-    print("用户提交：", name, '\t', pwd, '\t', remember_me)
+    verify_img_input = requests.POST.get("verify_img_input")
+    verify_img_cookie = AesDecrypt(requests.COOKIES['verify_code'])
+    print("用户提交：", name, '\t', pwd, '\t', remember_me, "\t", verify_img_input)
+    if verify_img_input!=verify_img_cookie:
+        return JsonResponse({"code": 403, "msg": "验证码错误", "data": {}}, safe=False)
     try:
         user_exist = User.objects.get(Q(user_name=name) | Q(user_email=name))  # 判断用户名是否存在
         try:
@@ -331,23 +342,23 @@ def login_ajax(requests):
                 # 如果remember_me中有false字符串
                 print("登录成功")
                 try:
-                    return JsonResponse({"state": "OK"})
+                    return JsonResponse({"code": 200, "msg": "", "data": {}}, safe=False)
                 except Exception as e:
                     print(e)
-                    return JsonResponse({"state": "OK"})
+                    return JsonResponse({"code": 200, "msg": "", "data": {}}, safe=False)
                     
             else:
                 # 设置cookie
-                response = JsonResponse({"state": "OK"})
+                response = JsonResponse({"code": 200, "msg": "", "data": {}}, safe=False)
                 response.set_cookie("user_name", name)
                 print("登录成功！")
                 return response
         except Exception as e:
             print("密码错误！")
-            return JsonResponse({"state": "password_error"})
+            return JsonResponse({"code": 403, "msg": "用户名或密码错误", "data": {}}, safe=False)
     except Exception as e:
         print("没有该用户，登陆失败!")
-        return JsonResponse({"state": "user_not_exist"})
+        return JsonResponse({"code": 403, "msg": "用户不存在", "data": {}}, safe=False)
 
 
 # 登出功能实现
@@ -355,12 +366,12 @@ def login_ajax(requests):
 def logout(requests):
     if requests.GET.get('logout') == 'true':
         requests.session.clear()  # 删除session
-        response = HttpResponse("logout_ok")
+        response = JsonResponse({"code": 200, "msg": "登出成功", "data": {}}, safe=False)
         response.delete_cookie("sessionid")  # 删除对应sessionid
         #print('登出')
         return response
     else:
-        return HttpResponse("Nothing Done")
+        return JsonResponse({"code": 500, "msg": "退出登录失败", "data": {}}, safe=False)
 
 
 # 登陆后可实现文件上传
@@ -461,7 +472,7 @@ def tool_detail(requests, tool_id):
         # 检测工具id号是否存在，如果不存在，渲染500页面
         Tool.objects.get(id=tool_id)
     except:
-        return render(requests, "500.html")
+        return render(requests, "404.html")
     return render(requests, "ToolsBox/tool_detail.html")
 
 
@@ -478,7 +489,8 @@ def get_tool_info(requests):
     try:
         tool_info = Tool.objects.get(id=tool_id, tool_is_checked=True)
     except Exception as e:
-        return JsonResponse({"state":"is_not_checked"}, safe=False)
+        # return JsonResponse({"state":"is_not_checked"}, safe=False)
+        return JsonResponse({"code": 403, "msg": "不存在相关信息", "data": {}}, safe=False)
     # 浏览量+1
     tool_info.tool_watch += 1
     tool_info.save()
@@ -536,7 +548,8 @@ def get_tool_info(requests):
     data["media_url"] = settings.MEDIA_URL
     data["is_login"] = is_login
     data["upload_time"] = tool_info.tool_create_time.strftime('%Y-%m-%d %H:%M:%S')
-    return JsonResponse(data, safe=False)
+    # return JsonResponse(data, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 
@@ -598,7 +611,7 @@ def get_search_tool(requests):
         i += 1
 
     data = {'total_count': len(search_result), "limit":tool_count_each_search_page,'key_str': key_str, 'page_num': page_num, "to_page": page, "tool_data": data_dict}
-    return JsonResponse(data, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 # 访问当前用户的个人数据
@@ -612,7 +625,7 @@ def get_personal_info(requests):
     user_name = from_url
     if requests.session['user_name'] != user_name:
         #print("用户请求了别人的主页")
-        return JsonResponse({"state":"option denied"}, safe=False)
+        return JsonResponse({"code": 403, "msg": "请求被拒绝", "data": {}}, safe=False)
 
     user = User.objects.filter(user_name=user_name)[0]
     user_id = user.id
@@ -625,7 +638,7 @@ def get_personal_info(requests):
     user_dict['user_reg_time'] = user.user_reg_time.strftime('%Y-%m-%d %H:%M:%S')
     user_dict['id'] = user.id
 
-    return JsonResponse(user_dict, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": user_dict}, safe=False)
 
 
 # 获取个人主页
@@ -670,7 +683,7 @@ def get_browser_history(requests):
         histories_list_.append(history_dict)
     data = {"history_list": histories_list_, "limit":tool_count_each_page,"total_count":total_count, "total_page":page_num, "cur_page":page}
 
-    return JsonResponse(data, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 # 获取用户上传记录 ajax
@@ -703,7 +716,7 @@ def get_upload_history(requests):
         upload_list_.append(upload_dict)
     data = {"upload_list": upload_list_, "limit":tool_count_each_page,"total_count":total_count, "total_page":page_num, "cur_page":page}
 
-    return JsonResponse(data, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 
@@ -736,7 +749,7 @@ def get_download_history(requests):
         download_dict["tool_icon"] = str(download_file.download_history.tool_icon)
         download_list_.append(download_dict)
     data = {"download_list": download_list_, "limit":tool_count_each_page,"total_count":total_count, "total_page":page_num, "cur_page":page}
-    return JsonResponse(data, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data}, safe=False)
 
 
 
@@ -747,17 +760,20 @@ def download(requests):
     import re
     download_id = requests.GET.get('url')
     #print("下载：", download_id)
-    tool = Tool.objects.get(id=download_id, tool_is_checked=True)
-    tool.tool_download += 1
-    tool.save()
-    
-    user_id = requests.session['user_id']
+    try:
+        tool = Tool.objects.get(id=download_id, tool_is_checked=True)
+        tool.tool_download += 1
+        tool.save()
+        
+        user_id = requests.session['user_id']
 
-    down_his = DownloadHistory()
-    down_his.user = User.objects.get(id=user_id)
-    down_his.download_history = tool
-    down_his.save()
-    return JsonResponse({"state": "ok"})
+        down_his = DownloadHistory()
+        down_his.user = User.objects.get(id=user_id)
+        down_his.download_history = tool
+        down_his.save()
+        return JsonResponse({"code": 200, "msg": "下载成功！", "data": {}}, safe=False)
+    except Exception as e:
+        return JsonResponse({"code": 404, "msg": "没有相关数据", "data": {}}, safe=False)
 
 
 # 主页获取工具信息
@@ -792,7 +808,7 @@ def get_tools(requests):
         data_list = paginator.page(cur_page).object_list  # 获取分页数据
     except:
         #print("超出页数")
-        return JsonResponse({'state': 'over_pages'})
+        return JsonResponse({"code": 500, "msg": "分页错误", "data": {}}, safe=False)
     tool_list = {}
     i = 1
     for tool in data_list:
@@ -806,14 +822,14 @@ def get_tools(requests):
         i += 1
     data_send = {"limit": page_size,'total_count': total_count, 'total_page': page_num, 'cur_page': cur_page, 'tool_list': tool_list, 'media_url': settings.MEDIA_URL}
     # 返回：总页数，页码，数据
-    return JsonResponse(data_send, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data_send}, safe=False)
 
 
 # 获取浏览和下载量前10的
 @timer
 def get_top_ten(requests):
+    import json
     try:
-        import json
         watch_top_ten = Tool.objects.filter(tool_is_checked=True).order_by('-tool_watch')[:10]
         download_top_ten = Tool.objects.filter(tool_is_checked=True).order_by('-tool_download')[:10]
         i = 0
@@ -839,10 +855,10 @@ def get_top_ten(requests):
         dict_result["watch"] = watch_dict
         dict_result["download"] = download_dict
 
-        return JsonResponse(dict_result, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data": dict_result}, safe=False)
     except Exception as e:
         print(e)
-        return JsonResponse({"state":e}, safe=False)
+        return JsonResponse({"code": 500, "msg": e, "data": {}}, safe=False)
 
 # 获取评论内容并存储
 @timer
@@ -850,15 +866,15 @@ def get_top_ten(requests):
 def submit_comment(requests):
     import re
     user_id = requests.session['user_id']
-    comment_content = requests.GET.get("text")
-    from_tool_id = requests.GET.get("from")
+    comment_content = requests.POST.get("text")
+    from_tool_id = requests.POST.get("from")
     #print(f"用户{user_id} 对 工具{from_tool_id} 发表了评论")
     comment = ToolComment()
     comment.comment_content = comment_content
     comment.user = User.objects.get(id=user_id)
     comment.tool = Tool.objects.get(id=from_tool_id)
     comment.save()
-    return HttpResponse("ok")
+    return JsonResponse({"code": 200, "msg": "", "data": {}}, safe=False)
 
 
 # 提取评论信息，并在工具详情页面显示
@@ -891,7 +907,7 @@ def get_comments(requests):
     data_send = {'limit':comments_each_page, 'total_page': page_num, 'comment_count': comment_count, 'cur_page': to_page,
                  'comment_list': comment_data}
     # 返回：总页数，页码，数据
-    return JsonResponse(data_send, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data_send}, safe=False)
 
 
 # 统计点赞个数
@@ -899,15 +915,15 @@ def get_comments(requests):
 def comments_good(requests):
     import re
 
-    from_tool_id = requests.GET.get("from")
-    user_name = requests.GET.get("user")
-    comment_time = requests.GET.get("time")
+    from_tool_id = requests.POST.get("from")
+    user_name = requests.POST.get("user")
+    comment_time = requests.POST.get("time")
     #print('点赞', from_tool_id, user_name, comment_time)
     result = ToolComment.objects.get(user__user_name=user_name, tool_id=from_tool_id, comment_time=comment_time)
     print(result)
     result.good += 1
     result.save()
-    return HttpResponse('ok')
+    return JsonResponse({"code": 200, "msg": "点赞成功", "data": {"good_num": result.good}}, safe=False)
 
 
 # 忘记密码页面
@@ -1007,36 +1023,27 @@ def get_status(requests):
         open_info = {"open_date": open_date, "open_time": str(open_time)}
 
         pc_status = {"cpu_info": cpu_info, "mem_info": mem_info, "disk_info": disk_info, "open_info": open_info}
-        return JsonResponse(pc_status)
+        return JsonResponse({"code": 200, "msg": "", "data": pc_status}, safe=False)
     except Exception as e:
         print("设备信息错误:", e)
-        return JsonResponse({"state":"error 500"})
+        return JsonResponse({"code": 500, "msg": "服务器状态获取失败", "data": {}}, safe=False)
+    
 
+def verify_img(request):
+    from utils.make_verify_img import get_verify_img
+    from utils.my_aes import AesEncrypt, AesDecrypt
 
-# 渲染命令行窗口
-@timer
-@ensure_csrf_cookie
-def cmd(requests):
-    return render(requests, "ToolsBox/cmd.html")
-
-
-# 获得、执行命令
-@timer
-def cmd_run(requests):
-    import subprocess
-
-    cmd = requests.POST.get("cmd")
-    print(cmd.split(" "))
-    if cmd.find("shutdown")!=-1 or cmd.find("halt")!=-1:
-        return HttpResponse("['想peach']")
-    command = cmd.split(" ")
-    content = subprocess.Popen(command, stdout=subprocess.PIPE)
-    content.wait()
-    lines = content.stdout.readlines()
-    list_cmd = [line.decode('utf8') for line in lines]
-    #print(list_cmd)
-    return HttpResponse(str(list_cmd))
-
+    try:
+        verify_img_base64, verify_str = get_verify_img()
+        print(verify_str)
+        rsp = JsonResponse({"msg": "获取验证码成功", "data": str(verify_img_base64, encoding='utf8'), "code": 200}, safe=False)
+        aes_img_code_encoded = AesEncrypt(verify_str)
+        rsp.set_cookie("verify_code", aes_img_code_encoded)
+        return rsp
+    except Exception as e:
+        print(e, e.__traceback__.tb_lineno)
+        return JsonResponse({"code": 500, "msg": f"验证码获取失败，{e}", "data": {}}, safe=False)
+    
 
 # 企业微信出门页面
 @timer
@@ -1088,10 +1095,11 @@ def put_order(request):
             SupportMe.objects.create(pay_amount=amount, order_id=order_id,pay_finish=False, ip_addr=ip)
         # print(f"order_id:{order_id}")
         pay_url = my_alipay.get_trade_url(order_id, amount)
-        return JsonResponse({"pay_url": pay_url}, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data": {"pay_url": pay_url}}, safe=False)
     except Exception as e:
         print(e)
         print(e.__traceback__.tb_lineno)
+        return JsonResponse({"code": 500, "msg": f"获取支付链接失败：{e}", "data": {}}, safe=False)
 
 
 class MyAliPay(View):
@@ -1228,31 +1236,13 @@ def video_show(requests):
 @timer
 def ban_ip(request):
     try:
-        from getBanIp import get_ban_ip
+        from utils.getBanIp import get_ban_ip
         ban_ips = get_ban_ip()
-        data = {"data":ban_ips} 
-        
-        return JsonResponse(data, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data": {"ban_ip_list":ban_ips}}, safe=False)
     except Exception as e:
         print(e)
-        return HttpResponse("something error!")
+        return JsonResponse({"code": 500, "msg": f"发生错误：{e}", "data": {}}, safe=False)
 
 @timer
 def ban(request):
    return render(request, "ToolsBox/ban_ip.html")
-
-
-@timer
-def resume(request, name):
-    print(name,"的简历")
-    return render(request, "ToolsBox/resume.html", {
-        "name": name,
-    })
-
-
-@timer
-def resume2(request, name):
-    print(name,"的简历")
-    return render(request, "ToolsBox/resume2.html", {
-        "name": name,
-    })

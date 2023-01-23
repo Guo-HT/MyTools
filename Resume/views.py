@@ -5,7 +5,7 @@ from Resume.models import *
 from ToolsBox.models import *
 from MyTools import settings
 import time
-from pc_or_mobile import judge_pc_or_mobile
+from utils.pc_or_mobile import judge_pc_or_mobile
 
 
 # Create your views here.
@@ -120,12 +120,12 @@ def have_resume(request):
     if request.session.has_key("user_id"):
         user_id = request.session["user_id"]
     else:
-        return JsonResponse({"state":"none"}, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data":{"state":"none"}}, safe=False)
     resume_list = UserResume.objects.filter(user_belong=user_id)
     if len(resume_list):
-        return JsonResponse({"state":"have", "file_name":resume_list[0].file_name}, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data":{"state":"have", "file_name":resume_list[0].file_name}}, safe=False)
     else:
-        return JsonResponse({"state":"none"}, safe=False)
+        return JsonResponse({"code": 200, "msg": "", "data":{"state":"none"}}, safe=False)
 
 @timer
 @ensure_csrf_cookie
@@ -156,7 +156,7 @@ def index_get_resumes(request):
         data_list = paginator.page(cur_page).object_list  # 获取分页数据
     except:
         #print("超出页数")
-        return JsonResponse({'state': 'over_pages'})
+        return JsonResponse({"code": 500, "msg": "分页错误", "data": {}}, safe=False)
     resume_list = []
     for resume in data_list:
         # id + 名称 + 图标链接 + 名字 + 介绍
@@ -168,7 +168,7 @@ def index_get_resumes(request):
     
     data_send = {'total_page': page_num, 'cur_page': cur_page, 'resume_list': resume_list, 'media_url': settings.MEDIA_URL}
     # 返回：总页数，页码，数据
-    return JsonResponse(data_send, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": data_send}, safe=False)
 
 
 @timer
@@ -191,4 +191,4 @@ def watch_num(request):
         watching.save()
     except Exception as e:
         print(e)
-    return JsonResponse({"state":"ok"}, safe=False)
+    return JsonResponse({"code": 200, "msg": "", "data": {"watch_num": watching.watch_num}}, safe=False)

@@ -70,19 +70,14 @@ $(function () {
                 "X-CSRFToken": get_csrf_token(),
             },
         }).done(function (msg) {
-            console.log(msg);
-            var data = eval(msg);
-            if (data.state === "OK") {
+            if (msg.code === "200") {
                 window.location.href = app_root + 'login';
-            } else if (data.state === "name_exist") {
-                layer.msg("用户名已存在！");
-            } else if (data.state === "wrong or timeout") {
-                layer.msg("验证码超时或错误！");
-                window.location.reload();
+            } else{
+                layer.msg(msg.msg)
             }
         })
-            .error(function () {
-                layer.msg("失败");
+            .fail(function () {
+                layer.msg("请求发生错误！");
             });
     })
 
@@ -112,7 +107,7 @@ $(function () {
         $.ajax({
             type: 'get',
             url: app_root + 'email_check',
-            dataType: 'text',
+            dataType: 'json',
             data: {
                 "user_email": $("#user-email").val(),
             },
@@ -121,19 +116,15 @@ $(function () {
             },
         }).done(function (msg) {
             // console.log('验证中......');
-            if (msg === 'email_exist') {
+            if (msg.code==200){
+                layer.msg("邮件已发送")
+            }else{
                 rest_time = 60;
                 $e_check_btn.val("获取验证码")
                 $e_check_btn.removeAttr("disabled");
                 clearInterval(timer_60s);
-                layer.msg("邮箱已被使用，请重新验证。");
                 $("#email").val("");
-            } else if (msg === "error") {
-                rest_time = 60;
-                $e_check_btn.val("获取验证码")
-                $e_check_btn.removeAttr("disabled");
-                clearInterval(timer_60s);
-                layer.msg("邮件发送出现问题");
+                layer.msg(msg.msg)
             }
         })
             .fail(function () {

@@ -3,8 +3,8 @@ from django.utils.deprecation import MiddlewareMixin    # 1.10.x
 import redis
 import re
 import datetime
-from pc_or_mobile import judge_pc_or_mobile
-from ip2loc import IpLocQuery
+from utils.pc_or_mobile import judge_pc_or_mobile
+from utils.ip2loc import IpLocQuery
 
 
 redis_ban_words_con = redis.StrictRedis(host="localhost", port=6379, db=3, password="guoht990520_2_redis")

@@ -21,27 +21,29 @@ $(function () {
             headers: {
                 "X-CSRFToken": get_csrf_token(),
             },
-        }).done(function (data) {
+        }).done(function (msg) {
             // console.log(data);
-            if(data.state==="is_not_checked"){
-                alert("此软件暂未上传或已下架。")
-                location.href=document.referrer;
-            }
-            tool_name = data.tool_name;
-            $("title").text(data.tool_name+" | 详情");
-            $("#img_icon").attr("src",  data.media_url + data.tool_icon);  // 图标链接
-            $("h1").text(data.tool_name);  // 工具名称
-            $("#tool_detail_content").html(data.tool_describe);  // 工具简介
-            $("#tool_watch").text(data.tool_watch);  // 浏览量
-			$("#upload_time").text(data.upload_time);
-            if (data.is_login === true) {
-                // 如果登录，则可以下载，可以评论
-                $("#download_btn").html("<a href=\"" + data.media_url  + data.tool_file + "\" id=\"file_download\">文件下载</a>");
-                $("#submit_btn").removeAttr("disabled").val("发表评论");
-            } else {
-                // 未登录，下载按钮跳转到登陆界面，评论按钮不可用
-                $("#download_btn").html("<a href=\"/tools/login\">登陆后下载</a>");
-                $("#submit_btn").attr("disabled", "disabled").val("登陆后评论");
+            if (msg.code==200){
+                data = msg.data;
+                tool_name = data.tool_name;
+                $("title").text(data.tool_name+" | 详情");
+                $("#img_icon").attr("src",  data.media_url + data.tool_icon);  // 图标链接
+                $("h1").text(data.tool_name);  // 工具名称
+                $("#tool_detail_content").html(data.tool_describe);  // 工具简介
+                $("#tool_watch").text(data.tool_watch);  // 浏览量
+                $("#upload_time").text(data.upload_time);
+                if (data.is_login === true) {
+                    // 如果登录，则可以下载，可以评论
+                    $("#download_btn").html("<a href=\"" + data.media_url  + data.tool_file + "\" id=\"file_download\">文件下载</a>");
+                    $("#submit_btn").removeAttr("disabled").val("发表评论");
+                } else {
+                    // 未登录，下载按钮跳转到登陆界面，评论按钮不可用
+                    $("#download_btn").html("<a href=\"/tools/login\">登陆后下载</a>");
+                    $("#submit_btn").attr("disabled", "disabled").val("登陆后评论");
+                }
+            }else{
+                layer.msg(msg.msg);
+                // location.href=document.referrer;
             }
         })
     }

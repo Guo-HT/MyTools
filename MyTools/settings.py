@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vq$-i=_cxndj7ukk85h@8yj$n!am&k*zg^4xa44c8&v-$0-kk5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # True
+DEBUG = False # True 
 
 ALLOWED_HOSTS = ['*', ]
 
@@ -212,6 +212,8 @@ ALIPAY_NOTIFY_URL = "http://guohtgo.asuscomm.com:8001/tools/notify"
 # 用户名:  16227
 # 电子邮件地址:  1622761893@qq.com
 # Password:  guoht990520
+
+AES_KEY = "guohtguoht990520"
 
 DOCS_URL = '/doc/'  # url
 DOCS_ROOT = BASE_DIR +'/doc/build/html'   # 文档路径

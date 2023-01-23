@@ -20,6 +20,28 @@ $(function () {
         })
     })
 
+    function get_verify_img_func(){
+        $.ajax({
+            url: app_root + "get_verify_img",
+            type: "get",
+            dataType: "json",
+            headers: {
+                "X-CSRFToken": get_csrf_token(),
+            },
+        }).done(function(msg){
+            console.log(msg)
+            if(msg.code==200){
+                var data = "data:image/png;base64,"+msg.data
+                $("#login_verify_img").attr("src", data)
+            }
+        }).fail(function(e){
+            console.log(e)
+        })
+    }
+    get_verify_img_func()
+
+    $("#login_verify_img_div").click(get_verify_img_func)
+
     // 提交登录信息
     $("#submit").click(function () {
         layui.use("layer", function(){
@@ -27,6 +49,7 @@ $(function () {
         })
         var user_name = $("#user-name").val();
         var user_password = $("#user-password").val();
+        var verify_img_input = $("#verify_img_input").val();
         var is_remember = $("#is-remember").is(":checked");
 
         if (user_name == "" && user_password!="") {
@@ -41,11 +64,14 @@ $(function () {
             layer.msg("请填写信息");
             return;
         }
-        else if(!slider.isOk()){
-            layer.msg("请完成滑动验证");
-            return;
+        else if(verify_img_input == ""){
+            layer.msg("请填写验证码")
         }
-        console.log(user_name, user_password, is_remember);
+        // else if(!slider.isOk()){
+        //     layer.msg("请完成滑动验证");
+        //     return;
+        // }
+        console.log(user_name, user_password, is_remember, verify_img_input);
 
         $.ajax({
             type: "post",
@@ -54,6 +80,7 @@ $(function () {
                 "name": user_name,  // 用户名/密码
                 "password": user_password,  // 用户密码（暂时未加密）
                 "is_remember": is_remember,  // 是否选中“记住我”
+                "verify_img_input": verify_img_input.toUpperCase(),  // 是否选中“记住我”
             },
             dataType: 'json',
             headers: {
@@ -61,8 +88,8 @@ $(function () {
             },
         })
             .done(function (msg) {
-                var data = eval(msg);
-                if (data.state === "OK") {
+                // var data = eval(msg);
+                if (msg.code === 200) {
                     $("#dragContainer").css({"display": "inherit"});
                     if (document.referrer === app_root + 'register') {
                         // 注册后登录的，直接返回index主页
@@ -78,20 +105,16 @@ $(function () {
                         window.location.href = document.referrer;
                     }
 
-                } else if (data.state === "password_error") {
-                    $("#name_tip").text("");
-                    $("#password_tip").text("  密码错误！");
-                    $("#login_password").val("");
-                    layer.msg("用户名或密码错误");
-                } else if (data.state === "user_not_exist") {
-                    $("#name_tip").text("  该用户不存在");
-                    $("#login_name").val("");
-                    $("#login_password").val("");
-                    layer.msg("该用户不存在");
-                }
+                }else {
+                    layer.msg(msg.msg);
+                    if (msg.msg=="验证码错误"){
+                        $("#verify_img_input").val();
+                        get_verify_img_func()
+                    }
+                } 
             })
             .fail(function () {
-                layer.msg("失败");
+                layer.msg("请求错误！");
             })
     })
 
