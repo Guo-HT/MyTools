@@ -1,0 +1,9 @@
+*.log
+*.pid
+*.txt
+*.out
+upload_files/*
+Daily/*
+.ssh/*
+*.pyc
+*/__pycache__/*
